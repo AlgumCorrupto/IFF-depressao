@@ -39,12 +39,12 @@ nav a::selection {
 }
 
 footer {
-    @apply text-center text-terciary;
+    @apply text-center text-terciary w-11/12;
     @apply mb-8;
 }
 
 .index-about {
-    @apply relative md:w-3/4 left-1/2 -translate-x-1/2 pb-10;
+    @apply relative md:w-3/4 w-11/12 left-1/2 -translate-x-1/2 pb-10;
 }
 .index-about h1 {
     @apply text-center text-3xl mb-6;
@@ -55,7 +55,7 @@ footer {
 }
 
 .welcome {
-    @apply mt-4 text-center text-lg;
+    @apply mt-4 text-center text-lg w-11/12;
     @apply relative left-1/2 -translate-x-1/2 w-3/4;
 }
 
