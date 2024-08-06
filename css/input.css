@@ -88,7 +88,7 @@ article .title {
 }
 
 article .body {
-    @apply text-justify;
+    @apply text-justify text-lg;
 }
 
 article .body p {
