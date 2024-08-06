@@ -557,7 +557,7 @@ video {
 @font-face {
   font-family: 'plex-mono';
 
-  src: url('fonts/plex.ttf') format('truetype');
+  src: url('/docs/fonts/plex.ttf') format('truetype');
 
   font-weight: normal;
 
