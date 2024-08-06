@@ -6,7 +6,7 @@ author: Paulo
 Olá bom dia, esse é meu segundo artigo aqui, eu gostaria de começar a falar como foi a minha matrícula no IFF, ela foi bem caótica e achava que por pouco perdia essa matrícula.
 foi uma mistura de desinformação e problemas técnicos que aconteceram, foi bastante estressante e acho que quem entrou pelo segundo semestre de 2024 deve compartilhar de algumas das frustrações que aconteceram comigo.
 
-Primeiramente, quando a lista de convocados saiu, eu havia ficado bastante surpreso pelo fato de eu ter sido colocado em 2° lugar pela cota pública, eu sim estudei, mas não achava qu isso era o bastante mas enfim para ser seugundo lugar. Isso me fez ficar contente.
+Primeiramente, quando a lista de convocados saiu, eu havia ficado bastante surpreso pelo fato de eu ter sido colocado em 2° lugar pela cota pública, eu sim estudei, mas não achava qu isso era o bastante para ser segundo lugar. Isso me fez ficar contente.
 
 Eles publicaram um edital falando que em breve os convocados iriam ser chamados para a matrícula. Os dias passaram, semanas passaram e nenhuma data havia sido públicada. Aí eu tive a brilhante ideia de perguntar algum conhecido sobre a data da matrícula, esse indivíduo falou comigo que o período da matrícula havia passado e que eu havia perdido ele, eu então entrei em pânico e essa pessoa começa a refutar-me piorando ainda mais a situação, fui para o banheiro refletir por uns 15 minutos aí tomei a decisão de andar 3,3 KM até o campus do IFF centro para pedir informação. 3,3 KM de ida e volta! Acabou que uma funcionária de lá falou que eles ainda estavam em greve e a data que essa pessoa de antes falou comigo era uma data que foi marcada antes da greve. Eu fiquei aliviado, perdi uma aula de geometria mas fiquei aliviado.
 
