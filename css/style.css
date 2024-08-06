@@ -557,7 +557,7 @@ video {
 @font-face {
   font-family: 'plex-mono';
 
-  src: url('/fonts/plex.ttf') format('truetype');
+  src: url('./fonts/plex.ttf') format('truetype');
 
   font-weight: normal;
 
@@ -660,11 +660,15 @@ footer {
 
 .index-about p {
   text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .welcome {
   margin-top: 1rem;
   text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   position: relative;
   left: 50%;
   width: 75%;
