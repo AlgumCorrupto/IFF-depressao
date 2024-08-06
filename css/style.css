@@ -631,7 +631,8 @@ nav a::selection {
 }
 
 footer {
-  width: 91.666667%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
   --tw-text-opacity: 1;
   color: rgb(118 216 163 / var(--tw-text-opacity));
@@ -668,6 +669,8 @@ footer {
 
 .welcome {
   margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
   font-size: 1.125rem;
   line-height: 1.75rem;

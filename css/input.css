@@ -39,7 +39,7 @@ nav a::selection {
 }
 
 footer {
-    @apply text-center text-terciary w-11/12;
+    @apply text-center text-terciary px-4;
     @apply mb-8;
 }
 
@@ -55,7 +55,7 @@ footer {
 }
 
 .welcome {
-    @apply mt-4 text-center text-lg w-11/12;
+    @apply mt-4 text-center text-lg px-4;
     @apply relative left-1/2 -translate-x-1/2 w-3/4;
 }
 
