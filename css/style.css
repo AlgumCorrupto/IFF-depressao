@@ -559,6 +559,8 @@ video {
 
   src: url('../../IFF-depressao/fonts/plex.ttf') format('truetype');
 
+  /*src: url('fonts/plex.ttf');*/
+
   font-weight: normal;
 
   font-style: normal;
