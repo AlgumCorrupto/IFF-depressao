@@ -1,5 +1,5 @@
 ---
-título: Algo que aconteceu com o PC do meu amigo
+title: Algo que aconteceu com o PC do meu amigo
 author: Paulo
 ---
 
