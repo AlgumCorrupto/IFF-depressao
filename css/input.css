@@ -89,7 +89,7 @@ article .title {
 }
 
 article .body {
-    @apply text-justify text-lg;
+    @apply md:text-justify text-lg;
 }
 
 article .body p {
