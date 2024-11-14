@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Todos os Posts</title>
+        <link>https://algumcorrupto.github.io/IFF-depressao/</link>
+        <description><![CDATA[Todos os Posts da página IFF da Depressão]]></description>
+        <atom:link href="https://algumcorrupto.github.io/IFF-depressao//rss.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Wed, 07 Aug 2024 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>Problemas técnicos</title>
+    <link>https://algumcorrupto.github.io/IFF-depressao//posts/2024-08-07-tecnico.html</link>
+    <description><![CDATA[<article>
+    <section class="title">Problemas técnicos</section>
+    <p class="filler">=========================================</p>
+    <section class="header">
+        Postado em August  7, 2024
+        
+            por Paulo
+        
+    </section>
+    <section class="body">
+        <p>Hoje vou contar algo que recentemente aconteceu com meu amigo. O Windows do computador dele bricou pois ele tirou o computador da tomada enquanto uma atualização do Windows estava em ocorrência. Uma atualização obrigatória, ele não havia percebido a atualização em andamento, desligou da tomada aí o computador não ligava mais. Ele não sabendo o que fazer, levou o computador dele no técnico da esquina numa sexta a tarde. Um pouco depois ele me conta o que aconteceu com o computador dele, aí explico para ele que esse problema é fácil de resolver, que dava para resolver em 1 hora re-instalando o Windows.</p>
+<p>O fim de semana passa daí ele resolve passar no técnico ver ele conseguiu resolver o problema, ele diz que o SSD do computador havia queimado – Um ssd de 240 gb hoje é em torno de 300 reais. Meu amigo então decide levar o computador dele para casa e tentar resolver isso por conta própria. Quando foi ligar o pc percebeu que o cabo dos drivers estavam desplugados e o mais engraçado: os parafusos do gabinete estavam faltando, logo depois ele pluga os cabos aí verifica pela BIOS que o SSD estava funcionando – pelo menos a bios estava reconhecendo o SSD. Isso aconteceu ontem. Ligou o pc que ainda estava sem os parafusos, com intenção de resolver o problema por conta própria. Ele pegou um pendrive pré-histórico de uns 10 anos atrás que tinha fotos da avó dele e o transformou num pen drive bootável usando o computador de sua mãe. Segundo ele, esse processo levou bastante tempo e ele teve que fazer ele duas vezes, porque na primeira vez tinha ocorrido um problema na criação do pendrive bootável.</p>
+<p>Quando ele começa a fazer a instalação do Windows, ele liga para mim contando tudo que havia acontecido até então. Eu presenciei em tempo real ele tentando instalar o Windows usando esse pendrive geriátrico. Levou uns 5 minutos para abrir um menu antes mesmo da atualização acontecer aí eu pensei: ele nunca vai completar essa atualização. Para abrir um menu leva esse tempo todo, quem dirá instalar o Windows. Talvez ele deveria mudar-se para o Linux. :)</p>
+    </section>
+</article>
+]]></description>
+    <pubDate>Wed, 07 Aug 2024 00:00:00 UT</pubDate>
+    <guid>https://algumcorrupto.github.io/IFF-depressao//posts/2024-08-07-tecnico.html</guid>
+    <dc:creator>Paulo Villaça</dc:creator>
+</item>
+<item>
+    <title>Período de matrícula</title>
+    <link>https://algumcorrupto.github.io/IFF-depressao//posts/2024-08-07-matricula.html</link>
+    <description><![CDATA[<article>
+    <section class="title">Período de matrícula</section>
+    <p class="filler">=========================================</p>
+    <section class="header">
+        Postado em August  7, 2024
+        
+            por Paulo
+        
+    </section>
+    <section class="body">
+        <p>Olá bom dia, esse é meu segundo artigo aqui, eu gostaria de começar a falar como foi a minha matrícula no IFF, ela foi bem caótica e achava que por pouco perdia essa matrícula.
+foi uma mistura de desinformação e problemas técnicos que aconteceram, foi bastante estressante e acho que quem entrou pelo segundo semestre de 2024 deve compartilhar de algumas das frustrações que aconteceram comigo.</p>
+<p>Primeiramente, quando a lista de convocados saiu, eu havia ficado bastante surpreso pelo fato de eu ter sido colocado em 2° lugar pela cota pública, eu sim estudei, mas não achava qu isso era o bastante para ser segundo lugar. Isso me fez ficar contente.</p>
+<p>Eles publicaram um edital falando que em breve os convocados iriam ser chamados para a matrícula. Os dias passaram, semanas passaram e nenhuma data havia sido publicada. Aí eu tive a brilhante ideia de perguntar algum conhecido sobre a data da matrícula, esse indivíduo falou comigo que o período da matrícula havia passado e que eu havia perdido ele, eu então entrei em pânico e essa pessoa começa a refutar-me piorando ainda mais a situação, fui para o banheiro refletir por uns 15 minutos aí tomei a decisão de andar 3,3 KM até o campus do IFF centro para pedir informação. 3,3 KM de ida e volta! Acabou que uma funcionária de lá falou que eles ainda estavam em greve e a data que essa pessoa de antes falou comigo era uma data que foi marcada antes da greve. Eu fiquei aliviado, perdi uma aula de geometria mas fiquei aliviado.</p>
+<p>Uma semana passou então o período da matrícula chegou. Minha mãe que gosta de fazer essas coisas bem cedo me acordou. Isso foi entre 5h30 e 6h00 da manhã, eles ainda nem haviam publicado o formulário da matrícula, ok irei tentar mais tarde. Tentei fazer o formulário as 10h00 da manhã e para minha surpresa o formulário deles estava quebrado! Durante o período que o formulário foi publicado até 15h00 daquele dia era impossível completar o formulário. Eu com minha mãe fui lá no campus, isso foi umas 13h00 da tarde, fui tentar fazer o formulário lá, como eu já havia falado o formulário só voltou a funcionar 15h00, então eu tive que esperar lá dentro do IFF por 2 horas até os macacos do setor de TI consertarem o problema. Até que eu gostei de ficar esse período lá. No IFF encontrei alguns colegas do isepam, inclusive foi por eles que eu fiquei sabendo de algumas coisas que eu falei no artigo passado. Enfim, 15h chegou, completei o formulário e fui para a casa. Eu não sei dizer se o período da matrícula foi provogado, seria ideal se acontecesse.</p>
+<p>Pelo portal do governo eu consigo monitorar o status da minha matrícula, ela primeiramente entra em um estado de espera de análise e quando essa análise for feita, se houver informações inválidas, o formulário será aberto novamente. Ocorreu um problema muito grande em que para todos os alunos do superior que passaram por cota, os dados da cota não eram salvos. Então TODOS que passsaram por cota tiveram que enviar seus dados novamente, ok isso foi um processo bem trivial para mim, no momento que o formulário abriu para a reposição de dados eu enviei as informações atualizadas, qual é o problema? O problema é que uma instituição que fornece 2 graduações de TI + alguns outros cursos na área é incapaz de fazer um serviço online funcional, e um serviço vital como esse que é matrícula de alunos. Provavelmente muitas pessoas acabaram perdendo a matrícula pela ingenuidade do pessoal do IFF, isso me deixa bastante furioso e isso é algo que me faz refletir sobre a qualidade do ensino oferecida aí. Outro problema é a falta de transparência diante a matrícula, eu me lembro de haver uma postagem no instagram anunciando o período de matrícula e vi muitas pessoas reclamando do formulário quebrado, horas depois não encontro esses comentários, os administradores da conta haviam apagado eles.</p>
+    </section>
+</article>
+]]></description>
+    <pubDate>Wed, 07 Aug 2024 00:00:00 UT</pubDate>
+    <guid>https://algumcorrupto.github.io/IFF-depressao//posts/2024-08-07-matricula.html</guid>
+    <dc:creator>Paulo Villaça</dc:creator>
+</item>
+<item>
+    <title>Olá Pessoal</title>
+    <link>https://algumcorrupto.github.io/IFF-depressao//posts/2024-08-06-ola.html</link>
+    <description><![CDATA[<article>
+    <section class="title">Olá Pessoal</section>
+    <p class="filler">=========================================</p>
+    <section class="header">
+        Postado em August  6, 2024
+        
+            por Paulo
+        
+    </section>
+    <section class="body">
+        <p>Eu acabei de finalizar o protótipo desse blog e esse é o primeiro artigo a ser publicado. Gostaria primeiramente apresentar-me.
+Olá eu sou o Paulo se você viu a página inicial, deve saber um pouco sobre mim, sou o autor dessa página e futuro aluno do curso
+superior do IFF. Eu curto criar coisas, decidi criar esse site para documentar minha jornada no ensino superior.</p>
+<p>Eu prototipei esse website em uma madrugada na sala da minha casa enquanto assistia alguns vídeos aleatórios do youtube. Na verdade criei esse ws pois eu tinha nada para fazer. Hoje dia 5 ou 6 de agosto é um feriado católico, de 2 dias + fim de semana de tempo livre, eu semana passada havia prototipado outro blog, ele não está no ar pois é, digamos… um pouco pesado e por enquanto não consigo hospedar ele. É um blog de review de álbuns que eu fiz junto com meu melhor amigo, o Shardev, no futuro esperamos conseguir hospedar ele.</p>
+<p>Esse site provavelmente ficará mais ativo quando eu realmente começar a estudar. Eu tenho um colega que estudou comigo no ensino médio que está fazendo esse mesmo curso, segundo ele existem vários clubes extra curriculares que os alunos podem participar. O que chamou minha atenção foi o clube de robótica em que eles recentemente fizeram um drone de corrida.</p>
+<p>Agora falando das coisas deprimentes, notei na grade curricular bastante tempos de física, cálculo e… alguns dias as aulas vão das 7h da manhã até as 20h da noite! Eu pensava que 7h até as 17h40 era ruim no ensino médio! 7h até 20h no ensino SUPERIOR!! Eu confesso que durante o ensino médio fui bem ruim nas matérias padrões. Peguei o primeiro ano na pândemia e o resto do meu tempo lá foi uma bagunça, muitos professores foram para o cargo administrativo e esses cargos não foram repostos! Espero que pelo menos se eu me ferrar no ensino superior pelo menos dessa vez seja culpa minha…</p>
+<p>Vou parar por aqui, agora caso tenha alguma sugestão ou queira conectar mande um email para palacciuscaralhus@gmail.com, eu prometo que tentarei ler a minha inbox e boa sorte!</p>
+    </section>
+</article>
+]]></description>
+    <pubDate>Tue, 06 Aug 2024 00:00:00 UT</pubDate>
+    <guid>https://algumcorrupto.github.io/IFF-depressao//posts/2024-08-06-ola.html</guid>
+    <dc:creator>Paulo Villaça</dc:creator>
+</item>
+
+    </channel>
+</rss>

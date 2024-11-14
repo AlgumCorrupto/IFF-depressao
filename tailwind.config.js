@@ -23,10 +23,10 @@ module.exports = {
       colors: {
         primary: '#B8D876',
         secondary: '#D8CE76',
-        terciary: '#76D8A3',
-        base1: '#1E1E1A',
-        base2: '#2C2C25',
-        base3: '#586049',
+        terciary: '#D87676',
+        base1: '#131311',
+        base2: '#1E1E1A',
+        base3: '#2C2C25',
         current: '#EFFECF',
         error:  '#D87676',
         warn: '#D8B176'

@@ -1,5 +1,5 @@
 ---
-title: História da minha matrícula
+title: Período de matrícula
 author: Paulo
 ---
 
