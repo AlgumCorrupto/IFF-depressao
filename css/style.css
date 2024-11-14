@@ -579,6 +579,8 @@ body {
 }
 
 .filler {
+  overflow: hidden;
+  position: relative;
   --tw-text-opacity: 1;
   color: rgb(44 44 37 / var(--tw-text-opacity));
 }
@@ -741,6 +743,7 @@ footer a {
 }
 
 .about-outer {
+  overflow-x: hidden;
   border-width: 2px;
   border-style: solid;
   --tw-border-opacity: 1;
@@ -749,6 +752,16 @@ footer a {
 
 .home-posts {
   padding-top: 0.5rem;
+}
+
+@media not all and (min-width: 640px) {
+  .home-posts {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.home-posts {
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 26 / var(--tw-bg-opacity));
@@ -760,6 +773,10 @@ footer a {
   .home-posts {
     width: 40%;
   }
+}
+
+.home-posts {
+  position: relative;
 }
 
 @media not all and (min-width: 768px) {

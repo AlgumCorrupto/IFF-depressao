@@ -16,7 +16,8 @@ body {
 }
 
 .filler {
-    @apply text-base3;
+    overflow: hidden;
+    @apply text-base3 relative;
 }
 
 a {
@@ -89,14 +90,16 @@ footer a {
     @apply bg-base2 rounded-xl;
     @apply lg:w-3/5;
     @apply max-md:w-full;
+    overflow-x: hidden;
     @apply border-solid border-2 border-primary;
 }
 .home-posts {
     @apply pt-2;
+    @apply max-sm:px-0;
     @apply bg-base2 rounded-xl;
     @apply mt-4 text-center;
     @apply lg:w-2/5;
-    @apply max-md:w-full;
+    @apply max-md:w-full relative;
     @apply border-solid border-2 border-terciary;
     overflow-x: hidden;
 }
