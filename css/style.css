@@ -895,9 +895,66 @@ article .body pre {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.dt {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
+.op {
+  --tw-text-opacity: 1;
+  color: rgb(253 186 116 / var(--tw-text-opacity));
+}
+
+.bu {
+  --tw-text-opacity: 1;
+  color: rgb(249 168 212 / var(--tw-text-opacity));
+}
+
+.st {
+  --tw-text-opacity: 1;
+  color: rgb(253 186 116 / var(--tw-text-opacity));
+}
+
+.sc {
+  --tw-text-opacity: 1;
+  color: rgb(253 224 71 / var(--tw-text-opacity));
+}
+
+.kw {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
+.dv {
+  --tw-text-opacity: 1;
+  color: rgb(253 224 71 / var(--tw-text-opacity));
+}
+
+.cf {
+  --tw-text-opacity: 1;
+  color: rgb(249 168 212 / var(--tw-text-opacity));
+}
+
+.pp {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
+.im {
+  --tw-text-opacity: 1;
+  color: rgb(253 186 116 / var(--tw-text-opacity));
+}
+
+.co {
+  --tw-text-opacity: 1;
+  color: rgb(134 239 172 / var(--tw-text-opacity));
 }
 
 article .body code {
+  overflow-x: scroll;
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 26 / var(--tw-bg-opacity));
   padding-left: 0.75rem;
@@ -906,6 +963,8 @@ article .body code {
   line-height: 1.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  white-space: pre;
+  overflow-x: auto;
 }
 
 article .body blockquote {

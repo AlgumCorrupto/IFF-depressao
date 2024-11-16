@@ -5,12 +5,13 @@ author: Paulo
 
 Eu acabei de finalizar o protótipo desse blog e esse é o primeiro artigo a ser publicado. Gostaria primeiramente apresentar-me.
 Olá eu sou o Paulo se você viu a página inicial, deve saber um pouco sobre mim, sou o autor dessa página e futuro aluno do curso
-superior do IFF. Eu curto criar coisas, decidi criar esse site para documentar minha jornada no ensino superior.
+de Engenharia da Computação. Eu curto criar coisas, decidi criar esse site para documentar minha jornada no ensino superior.
 
-Eu prototipei esse website em uma madrugada na sala da minha casa enquanto assistia alguns vídeos aleatórios do youtube. Na verdade criei esse ws pois eu tinha nada para fazer. Hoje dia 5 ou 6 de agosto é um feriado católico, de 2 dias + fim de semana de tempo livre, eu semana passada havia prototipado outro blog, ele não está no ar pois é, digamos... um pouco pesado e por enquanto não consigo hospedar ele. É um blog de review de álbuns que eu fiz junto com meu melhor amigo, o Shardev, no futuro esperamos conseguir hospedar ele.
+Eu prototipei esse website numa madrugada. Semana passada havia autorado um outro blog com meu amigo, o problema que decidi fazer ele fullstack e agora encontro problemas relacionado a sua hospedagem. É um blog de review de álbuns, tem seu próprio sistema de login, ferramenta de pesquisa e agora está pegando poeira num repositório no github. No futuro esperamos conseguir hospedar ele.
 
 Esse site provavelmente ficará mais ativo quando eu realmente começar a estudar. Eu tenho um colega que estudou comigo no ensino médio que está fazendo esse mesmo curso, segundo ele existem vários clubes extra curriculares que os alunos podem participar. O que chamou minha atenção foi o clube de robótica em que eles recentemente fizeram um drone de corrida.
 
-Agora falando das coisas deprimentes, notei na grade curricular bastante tempos de física, cálculo e... alguns dias as aulas vão das 7h da manhã até as 20h da noite! Eu pensava que 7h até as 17h40 era ruim no ensino médio! 7h até 20h no ensino SUPERIOR!! Eu confesso que durante o ensino médio fui bem ruim nas matérias padrões. Peguei o primeiro ano na pândemia e o resto do meu tempo lá foi uma bagunça, muitos professores foram para o cargo administrativo e esses cargos não foram repostos! Espero que pelo menos se eu me ferrar no ensino superior pelo menos dessa vez seja culpa minha... 
+Agora falando das coisas deprimentes, notei na grade curricular bastante tempos de física, cálculo.
+Pensava que das 07h até as 17h40 era cansativo no ensino médio... Não imaginava que o superior seria ainda mais cansativo, das 07h até as 20h... Eu confesso que durante o ensino médio fui bem ruim nas matérias que não faziam parte da grade do técnico. Peguei o primeiro ano na pândemia e o resto do meu tempo lá foi uma bagunça, muitos professores que originalmente davam aulas foram para cargos administrativos... Realmente espero que não haja mais confusões desse tipo durante o meu ensino superior :).
 
-Vou parar por aqui, agora caso tenha alguma sugestão ou queira conectar mande um email para palacciuscaralhus@gmail.com, eu prometo que tentarei ler a minha inbox e boa sorte!
+Vou parar por aqui, já que esse foi apenas um artigo de testes... Caso tenha alguma sugestão ou queira conectar mande um e-mail para pauloarturvillaca@gmail.com, eu prometo que tentarei ler a minha inbox e se você for um colega, boa sorte nessa jornada!
