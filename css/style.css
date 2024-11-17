@@ -865,6 +865,7 @@ article .body ul {
 }
 
 article .body h1 {
+  text-align: center;
   font-size: 1.875rem;
   line-height: 2.25rem;
   text-decoration-line: underline;
@@ -872,11 +873,13 @@ article .body h1 {
 }
 
 article .body h2 {
+  margin-left: 0.5rem;
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
 article .body h3 {
+  margin-left: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -965,6 +968,9 @@ article .body code {
   padding-bottom: 0.25rem;
   white-space: pre;
   overflow-x: auto;
+}
+
+article sourceCode span {
 }
 
 article .body blockquote {

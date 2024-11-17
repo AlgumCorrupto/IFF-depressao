@@ -143,13 +143,16 @@ article .body ul{
 }
 
 article .body h1 {
+    @apply text-center;
     @apply text-3xl underline underline-offset-4;
 }
 article .body h2 {
+    @apply ml-2;
     @apply text-2xl;
 }
 
 article .body h3 {
+    @apply ml-4;
     @apply text-xl;
 }
 
@@ -215,6 +218,9 @@ article .body code {
     @apply py-1;
     white-space: pre;
     overflow-x: auto;
+}
+article sourceCode span {
+    
 }
 
 article .body blockquote {
