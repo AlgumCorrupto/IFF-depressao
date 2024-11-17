@@ -1,17 +1,60 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
-import           Hakyll
+import Hakyll
+    ( getResourceBody,
+      makeItem,
+      saveSnapshot,
+      loadAll,
+      loadAllSnapshots,
+      defaultConfiguration,
+      copyFileCompiler,
+      idRoute,
+      setExtension,
+      compile,
+      create,
+      match,
+      route,
+      hakyllWith,
+      compressCssCompiler,
+      renderRss,
+      relativizeUrls,
+      bodyField,
+      constField,
+      dateField,
+      defaultContext,
+      listField,
+      applyAsTemplate,
+      loadAndApplyTemplate,
+      templateBodyCompiler,
+      recentFirst,
+      pandocCompilerWith,
+      defaultHakyllReaderOptions,
+      defaultHakyllWriterOptions,
+      Configuration(destinationDirectory),
+      FeedConfiguration(..),
+      Context )
 
-
+import Text.Pandoc.Options
 --------------------------------------------------------------------------------
 config :: Configuration
 config = defaultConfiguration
   { destinationDirectory = "docs"
   }
 
+pandocMathCompiler =
+    let mathExtensions = [Ext_tex_math_dollars, Ext_tex_math_double_backslash,
+                          Ext_latex_macros ]
+        defaultExtensions = writerExtensions defaultHakyllWriterOptions
+        newExtensions = defaultExtensions `mappend` pandocExtensions `mappend` extensionsFromList mathExtensions
+        writerOptions = defaultHakyllWriterOptions {
+                          writerExtensions = newExtensions,
+                          writerHTMLMathMethod = MathJax ""
+                        }
+    in pandocCompilerWith defaultHakyllReaderOptions writerOptions
+
 main :: IO ()
-main = hakyllWith config $ do 
+main = hakyllWith config $ do
     match "fonts/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -31,25 +74,26 @@ main = hakyllWith config $ do
     --         >>= relativizeUrls
 
 
+    match "posts/*.markdown" $ do
+        route $ setExtension "html"
+        --compile $ pandocCompilerWithTransformM defaultHakyllReaderOptions defaultHakyllWriterOptions
+        --        $ renderFormulae defaultPandocForumlaOptions
+        compile $ pandocMathCompiler
+            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= saveSnapshot "content"
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= relativizeUrls
+    
     -- The rss feed of the posts
     create ["rss.xml"] $ do
       route idRoute
       compile $ do
         let feedCtx = postCtx `mappend` bodyField "description"
         posts <- 
-          fmap (take 10) . recentFirst
+          fmap (Prelude.take 10) . recentFirst
             =<< loadAllSnapshots "posts/*" "content"
 
         renderRss feedConfiguration feedCtx posts
-
-    match "posts/*" $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
-    
     -- match "404.html" $ do
     --     route idRoute
     --     compile $ pandocCompiler
