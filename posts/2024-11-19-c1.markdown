@@ -1,0 +1,165 @@
+---
+title: A linguagem de programação C
+author: Paulo
+---
+
+Nesse artigo vamos ver a estrutura básica de um programa escrito em C, variáveis, tipos, entrada/saída básica entre outros.
+
+C é uma linguagem de programação criada em Bell Labs por Brian Kerninghan e Dennis Ritchie por volta dos anos 70 para sistemas UNIX como uma ferramenta para facilitar o processo de desenvolvimento de aplicações, convertendo código que seria mais fácil um humano entender para código de máquina, esse processo é feito por um programa chamado <u>compilador</u>.
+
+
+```c
+//Um programa de C tem estrutura básica:
+
+int main() {
+    // código começa a ser executado aqui 
+
+    return 0; // programa finaliza nessa linha
+}
+```
+
+Sendo que o programa começa ser executado linha por linha dentro da função ``main``. Funções são como bloco de código reusáveis. É possível o programador definir sua próprias funções, usar elas e até aproveitar funções feitas por outros programadores, veremos mais sobre funções no futuro.
+
+> Obs: Tudo em uma linha que vem depois do símbolo ``//`` ou que está colorido na cor verde é considerado um <u>comentário</u> e é apenas usado para documentação de seu programa.
+
+# Variáveis e tipos
+
+### Exemplo 1
+
+```c
+// Exemplo de criação de variáveis 1
+
+int main() {
+    int meuNumero = 69;
+
+    return 0;
+}
+```
+
+Nesse exemplo, estou criando uma variável chamada ``meuNumero``de tipo ``int`` -- significa que é um inteiro -- com valor atribuido ``69``.
+
+### Exemplo 2
+
+```c
+// Exemplo de criação de variáveis 2
+
+int main() {
+    int numero1 = 34;
+    int numero2 = numero1 + 35;
+
+    return 0;
+}
+```
+
+Nesse outro exemplo, crio duas variáveis. As duas de tipo ``int``, respectivamente chamadas ``numero1``e ``numero2``.
+
+- ``numero1`` tem o valor ``34``
+
+- ``numero2`` tem o valor ``35`` + ``numero1`` quese transforma em ``35 + 34``. Então o valor do ``numero2`` é ``69``.
+
+### exemplo 3
+
+```c
+// Exemplo de criação de variáveis 3
+
+int main() {
+    int n = 3;
+    int n = 4;
+
+    return 0;
+}
+```
+
+É possível criar variáveis e logo depois mudar seu valor. Variáveis em C não são como variáveis na matemática, em que são constantes e imutáveis.
+
+## Tipos
+
+Além do tipo ``int`` existem outros tipos de dados primitivos em C, os principais sendo: 
+
+|Nome|Significado|Exemplo|
+|-|-|-|
+|``int``|Equivalente a um número inteiro na Matemática.|``38``, ``23``, ``11``|
+|``float``|Equivalente um número com casas decimais.|``2.2``, ``4.0``, ``0.01``|
+|``char``|Um caractere|``'G'``, ``'3'``, ``'#'``, ``\0``|
+
+Além desses tipos, existe um tipo de dados que não é primitivo mas é bastante utilizado em geral. Esse tipo de dado chama-se ``string``, em que é uma lista de caracteres deliminado pelo <u>caractere nulo</u> ``'\0'``.
+
+
+> Obs: o caractere nulo é um <u>backspace character</u>, isso essencialmente significa que ele está atrelado a nenhum símbolo gráfico, mas sim a uma funcionalidade. Alguns de outros caracteres desse tipo são o ``'\n'`` -- nova linha -- e ``'\t'`` -- tab.
+
+```c
+// Sintaxe das strings em C
+
+int main() {
+    char meuCaractere = '$';            // isso é um caractere
+    char meuTexto[] = "Socorro!\0";     // isso é uma string
+
+    return 0;
+}
+```
+
+> Obs: Note a diferença! Para declarar o valor de um caractere utiliza-se aspas simples '', já em strings utiliza-se aspas duplas "". Também em strings utiliza-se colchetes logo depois do nome da variável (isso é notação de lista, assunto que veremos depois).
+
+# Entrada/Saída e a biblioteca padrão
+
+Até o momento, nós vimos o que são variáveis e tipos. Mas ainda não fazemos interação com o usuário. Se nós rodarmos os programas dos exemplos anteriores nada vai aparecer na tela ou terminal do usuário.
+
+Um conjunto de funções, constantes e variáveis de uso genérico e reusáveis chama-se <u>biblioteca</u> ou <u>library</u> em inglês. A linguagem C tem uma biblioteca padrão que contém funções como de Entrada/Saída, operações com strings, matemática que é padronizado para compiladores de todos os sistemas operacionais, referimos esse conjunto de "coisas" como <u>biblioteca padrão</u> ou em inglês <u>standard library</u> ou simplesmente <u>std</u>.
+
+Podemos incluir partes de uma biblioteca usando a diretiva `include`. No exemplo logo abaixo vou incluir uma biblioteca chamada ``stdio`` -- A biblioteca padrão referente a Entrada/Saída -- e chamar uma de suas funções ``println()``, que escreve o que está entre parênteses na tela do usuário.
+
+```c
+// Exemplo de Saida
+#include <stdio.h>
+
+int main() {
+    printf("Ola mundo!");
+    return 0;
+}
+```
+
+Saída:
+
+```
+Ola mundo!
+```
+
+Além de poder escrever coisas na tela, é possível também ler a entrada do teclado. Para isso podemos usar a função ``gets()``.
+
+```c
+// Exemplo de Entrada/Saida
+#include <stdio.h>
+
+int main(){
+    char meuNome[100];              // coloco um valor arbitrariamente grande para ser meu buffer
+    printf("Fale o seu nome:\n");    // caractere \n significa que é o fim da linha.
+    gets(meuNome);
+    printf("Ola %s!\n", minhaEntrada); 
+
+    return 0;
+}
+```
+
+Exemplo de saída:
+
+```
+Fale o seu nome
+Paulo
+Ola Paulo!
+```
+
+Vocês devem ter notado o `%s` no segundo ``printf``. ``%s`` Marca a posição de uma string (nesse caso minhaEntrada), na saída. Essas mini expressões que começam com ``%`` são usados para concatenar dados que geramente vem de variáveis na saída usando o ``printf`` e o segundo caractere dessas expressões representa qual é o tipo da variável que você quer representar.
+
+Aqui está uma tabela representado os principais especificadores: 
+
+|Especificador|Saída|Exemplo|
+|-|-|-|
+|d|Números inteiros com formatação base 10|1, -2, 500|
+|x|Números inteiros com formatação hexadecimal| 0xFF, 0ED|
+|c|Caracteres|a, b, %|
+|s|Strings|palavra|
+
+
+# Conclusão
+
+Com isso eu finalizo esse artigo. Se vocês gostarem dele, eu posso torna-lo numa série explicando mais sobre a linguagem C.

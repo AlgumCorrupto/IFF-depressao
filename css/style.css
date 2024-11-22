@@ -870,6 +870,7 @@ article .body h1 {
   line-height: 2.25rem;
   text-decoration-line: underline;
   text-underline-offset: 4px;
+  margin-bottom: 1rem;
 }
 
 article .body h2 {

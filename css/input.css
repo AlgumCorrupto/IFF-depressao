@@ -145,6 +145,7 @@ article .body ul{
 article .body h1 {
     @apply text-center;
     @apply text-3xl underline underline-offset-4;
+    @apply mb-4;
 }
 article .body h2 {
     @apply ml-2;
