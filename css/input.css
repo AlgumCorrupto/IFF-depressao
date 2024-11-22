@@ -258,7 +258,7 @@ article .body table {
     @apply mb-4;
     @apply relative w-full text-center -translate-x-1/2 left-1/2;
     text-align: center;
-
+    @apply px-2;
 }
 
 

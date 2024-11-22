@@ -152,13 +152,71 @@ Vocês devem ter notado o `%s` no segundo ``printf``. ``%s`` Marca a posição d
 
 Aqui está uma tabela representado os principais especificadores: 
 
-|Especificador|Saída|Exemplo|
+|Spec.|Saída|Ex.|
 |-|-|-|
 |d|Números inteiros com formatação base 10|1, -2, 500|
 |x|Números inteiros com formatação hexadecimal| 0xFF, 0ED|
+|f|Números de ponto flutuantes (floats)|3.14, 1/2, 4.0|
 |c|Caracteres|a, b, %|
 |s|Strings|palavra|
 
+Como vocês notaram a função ``gets()`` espera um buffer de tipo `string` como argumento. Caso seu programa queira converter uma variável tipo `string` para tipo ``int``, é utilizado a função `atoi()`, que pega como um argumento uma `string` qualquer e retorna um `int`.
+
+```c
+// Programa demonstrando o uso de função atoi()
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char str1[] = "141";
+    char str2[] = "3.14"; // Note que esse é um número decimal
+  
+    // Usando atoi() para converter strings em números inteiros
+    int num1 = atoi(str1);
+    int num2 = atoi(str2); // como int tipo de número inteiro, 3.14 vira apenas 3
+  
+    // Fazendo uma operação aritmética
+    int soma = num1 + num2;
+    printf("%d + %d = %d", num1, num2, soma);
+
+    return 0;
+}
+```
+
+Saída:
+
+```
+141 + 3 = 144
+```
+
+Também existe um análogo que converte string em números `floats` -- números de ponto flutuante ou decimais, chamada `atof()`.
+
+```c
+// Programa demonstrando o uso de função atof()
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char str1[] = "141"; // note que esse número é inteiro
+    char str2[] = "3.14";
+  
+    // Usando atof() para converter strings em números floats
+    float num1 = atof(str1); // como float é tipo decimal, 141 vira 141.0
+    float num2 = atof(str2); 
+  
+    // Fazendo uma operação aritmética
+    float soma = num1 + num2;
+    printf("%f + %f = %f", num1, num2, soma);
+
+    return 0;
+}
+```
+
+Saída:
+
+```
+141.0 + 3.14 = 144.14
+```
 
 # Conclusão
 
