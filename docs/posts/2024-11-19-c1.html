@@ -191,7 +191,7 @@ Ola Paulo!</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Como vocês notaram a função <code>gets()</code> espera um buffer de tipo <code>string</code> como argumento. Caso seu programa queira converter uma variável tipo <code>string</code> para tipo <code>int</code>, é utilizado a função <code>atoi()</code>, que pega como um argumento uma <code>string</code> qualquer e retorna um <code>int</code>.</p>
+<p>Como vocês notaram a função <code>gets()</code> espera um buffer de tipo <code>string</code> como argumento. Caso seu programa queira converter uma variável tipo <code>string</code> para tipo <code>int</code>, é utilizado a função <code>atoi()</code>, que pega como um argumento uma <code>string</code> válido e retorna um <code>int</code>, caso o contrário seu programa entra em pânico e crasha.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Programa demonstrando o uso de função atoi()</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
@@ -212,7 +212,7 @@ Ola Paulo!</code></pre>
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>Saída:</p>
 <pre><code>141 + 3 = 144</code></pre>
-<p>Também existe um análogo que converte string em números <code>floats</code> – números de ponto flutuante ou decimais, chamada <code>atof()</code>.</p>
+<p>Também existe um função análoga que converte <code>string</code> em números <code>floats</code> chamada <code>atof()</code>.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Programa demonstrando o uso de função atof()</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>

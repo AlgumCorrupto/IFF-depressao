@@ -160,7 +160,7 @@ Aqui está uma tabela representado os principais especificadores:
 |c|Caracteres|a, b, %|
 |s|Strings|palavra|
 
-Como vocês notaram a função ``gets()`` espera um buffer de tipo `string` como argumento. Caso seu programa queira converter uma variável tipo `string` para tipo ``int``, é utilizado a função `atoi()`, que pega como um argumento uma `string` qualquer e retorna um `int`.
+Como vocês notaram a função ``gets()`` espera um buffer de tipo `string` como argumento. Caso seu programa queira converter uma variável tipo `string` para tipo ``int``, é utilizado a função `atoi()`, que pega como um argumento uma `string` válido e retorna um `int`, caso o contrário seu programa entra em pânico e crasha.
 
 ```c
 // Programa demonstrando o uso de função atoi()
@@ -189,7 +189,7 @@ Saída:
 141 + 3 = 144
 ```
 
-Também existe um análogo que converte string em números `floats` -- números de ponto flutuante ou decimais, chamada `atof()`.
+Também existe um função análoga que converte `string` em números `floats` chamada `atof()`.
 
 ```c
 // Programa demonstrando o uso de função atof()
