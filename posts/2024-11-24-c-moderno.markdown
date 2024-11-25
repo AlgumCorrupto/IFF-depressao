@@ -96,7 +96,7 @@ Algumas de suas funcionalidades interessantes:
 Imagino que funções oferecidas pelo `<stdbit.h>` sejam interessantes para quem trabalha com processamento de sinais, imagens ou arquivos binários.
 
 
-# multi-threading na biblioteca padrão
+# Multi-threading na biblioteca padrão
 
 Multi-threading estava presente desde C11, no entanto eu considero isso um recurso de C moderno vejo esse recurso sendo um tanto subutilizado em relação os outros recursos. Geralmente quando vejo alguém utilizando threads na linguagem C, vejo ela utilizando as bibliotecas oferecidas pelo próprio sistema operacional, como POSIX threads ou as threads da WINAPI.
 
