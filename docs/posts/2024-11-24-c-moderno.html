@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+        <title>IFF da depressão - C Moderno</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="icon" type="image/x-con" href="../images/favicon.ico">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="title">
+                <p class="filler">:::::::::::::::::</p>
+                              <h1>IFF da depressão</h1>
+                <p class="filler">:::::::::::::::::</p>
+            </div>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../contact.html">Contato</a>
+                <a href="../rss.xml">RSS</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <article>
+    <section class="title">C Moderno</section>
+    <p class="filler">=========================================</p>
+    <section class="header">
+        Postado em November 24, 2024
+        
+            por Paulo
+        
+    </section>
+    <section class="body">
+        <p>C é uma linguagem que é bastante antiga e com uma comunidade bastante madura, em início de sua história ocorreram bastantes mudanças, mais notavelmente do C estilo K&amp;R para o popular ANSI C, que é usado como ferramenta de aprendizado mundialmente em várias instituições de ensino com o objetivo de introduzir tópicos relacionados a programação e algoritmos de uma maneira mais prática.</p>
+<p>No entanto a linguagem de programação C continua evoluindo e novos recursos vem sendo adicionados com o objetivo de moderniza-la para que ela continue sendo competitiva com as demais novas linguagens de programação que surgiram nesses últimos anos.</p>
+<p>O C moderno é padronizado pela <a href="https://www.open-std.org/jtc1/sc22/wg14/">ISO/IEC JTC1/SC22/WG14</a>, organização que padroniza a linguagem C desde 1990 até os dias atuais 2014, tendo a última atualização no documento agora em 28 de julho de 2024.</p>
+<p>Nesse artigo vamos documentar alguns dos novos recursos que mais achei interessante e talvez mude a maneira que você programe nessa linguagem.</p>
+<h1 id="bitint">_BitInt</h1>
+<p><code>_BitInt()</code>, antes chamado de <code>_Extint</code> em propóstas passadas é um tipo de largura-bit arbitrário, ou seja, permite você criar números inteiros de qualquer tamanho. É análogo a recurso da linguagem zig que permite o mesmo comportamento.</p>
+<p>Mas quais seriam os casos de uso do <code>_BitInt()</code>? Imagina que você está escrevendo um sistema para fazer a conversão de strings em Base64 para strings padrão? Um caractere Base64 tem 6 bits de largura, então um valor de tipo <code>_BitInt(6)</code> seria ideal para armazenar o valor desse carectere 6 bits-wide.</p>
+<p>Ou até pode ser usado para armazenar números extremamente grandes.</p>
+<h3 id="exemplo-_bitint">Exemplo _BitInt:</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// exemplo trabalhando com números extremamente grandes</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">_BitInt</span> <span class="op">(</span><span class="dv">1048576</span><span class="op">)</span> x <span class="op">=</span> <span class="op">((</span><span class="dt">_BitInt</span> <span class="op">(</span><span class="dv">1048576</span><span class="op">))</span> <span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> <span class="op">(</span><span class="dv">1</span> <span class="op">&lt;&lt;</span> <span class="dv">20</span><span class="op">);</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">bool</span> is_even <span class="op">=</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    puts<span class="op">(</span> <span class="op">(</span>is_even<span class="op">)</span> <span class="op">?</span> <span class="st">&quot;2^(2^20) é par!&quot;</span> <span class="op">:</span> <span class="st">&quot;2^(2^20) é impar!&quot;</span> <span class="op">);</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="esse-programa-produz-a-saída">Esse programa produz a saída:</h3>
+<pre><code>2^(2^20) é par!</code></pre>
+<p>Atualmente esse recurso está para ser amplamente implementado depois de 2025, atualmente até por onde eu sei apenas LLVM/Clang tem uma implementação do <code>_BitInt</code>.</p>
+<h1 id="stdarg.h">stdarg.h</h1>
+<p><code>stdarg.h</code> define comportamentos com funções similares ao <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">rest parameters do javascript</a>, em que são para que funções aceitem um número indefinido de parâmetros.</p>
+<h3 id="exemplo-sobre-stdarg.h-da-wikipedia">Exemplo sobre <code>stdarg.h</code> da wikipedia:</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// somatório de números</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdarg.h&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">// primeiro argumento é a quantidade de valores</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> somatorio<span class="op">(</span><span class="dt">int</span> count<span class="op">,</span> <span class="op">...)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">va_list</span> ap<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> soma <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  va_start<span class="op">(</span>ap<span class="op">,</span> arg1<span class="op">);</span> </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="op">(</span>i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> count<span class="op">;</span> i<span class="op">++)</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    soma <span class="op">+=</span> va_arg<span class="op">(</span>ap<span class="op">,</span> <span class="dt">int</span><span class="op">);</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  va_end<span class="op">(</span>ap<span class="op">);</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> soma<span class="op">;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>   printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">%i</span><span class="st">&quot;</span><span class="op">,</span> somatorio<span class="op">(</span><span class="dv">2</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">));</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="esse-programa-produz-a-saída-1">Esse programa produz a saída:</h3>
+<pre><code>4</code></pre>
+<h1 id="stdbit.h">stdbit.h</h1>
+<p>Tratamento e criação de novos tipos de dados primitivos parecem ser um tema para o C Moderno. Foi introduzido um completo novo módulo da biblioteca padrão para justamente trazer novas operações e utilidades para números binários. Agora vou trazer uma quote traduzida da especificação atual do C23</p>
+<blockquote>
+<p>O Header <code>&lt;stdbit.h&gt;</code> define macros, tipos e funções para trabalhar com a representação binária e byte de diversos tipos, tipicamente tipos inteiros. Esse header torna disponível o tipo <code>size_t</code> e qualquer tipo <code>uintN_t</code>, <code>intN_t</code>, <code>uint_leastN_T</code>, ou <code>int_leastN_t</code> definidos pela implementação.</p>
+</blockquote>
+<p>Algumas de suas funcionalidades interessantes:</p>
+<ul>
+<li><p>Funções para contagem de zeros/uns consecutivos no início e fim da stream;</p></li>
+<li><p>Funções para verificar o primeiro e último valor de uma stream.</p></li>
+<li><p>Checagem de um único bit</p></li>
+<li><p>Computação do menor número de bits possível para armazenar um valor.</p></li>
+</ul>
+<p>Imagino que funções oferecidas pelo <code>&lt;stdbit.h&gt;</code> sejam interessantes para quem trabalha com processamento de sinais, imagens ou arquivos binários.</p>
+<h1 id="multi-threading-na-biblioteca-padrão">multi-threading na biblioteca padrão</h1>
+<p>Multi-threading estava presente desde C11, no entanto eu considero isso um recurso de C moderno vejo esse recurso sendo um tanto subutilizado em relação os outros recursos. Geralmente quando vejo alguém utilizando threads na linguagem C, vejo ela utilizando as bibliotecas oferecidas pelo próprio sistema operacional, como POSIX threads ou as threads da WINAPI.</p>
+<p>Os primitivos de threads do C moderno estão definidas no cabeçalho <code>&lt;threads.h&gt;</code>, tal que contém funções para criação, destruição de threads e passagem de mensagem entre as threads. Também existe outro cabeçalho que vai par a par com <code>&lt;threads.h&gt;</code> chamada <code>&lt;stdatomic.h&gt;</code>, que define tipos de dados atômicos – aqueles feitos para serem compartilhado entre threads.</p>
+    </section>
+</article>
+
+        </main>
+
+        <footer>
+            <br>
+            <p class="filler">-----------------------</p>
+            <p>Esse site foi orgulhosamente gerado usando <a href="https://jaspervdj.be/hakyll/">Hakyll</a></p>
+            <p class="filler">-----------------------</p>
+        </footer>
+    </body>
+</html>

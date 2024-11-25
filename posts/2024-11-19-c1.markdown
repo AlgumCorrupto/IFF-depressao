@@ -57,7 +57,7 @@ Nesse outro exemplo, crio duas variáveis. As duas de tipo ``int``, respectivame
 
 - ``numero2`` tem o valor ``35`` + ``numero1`` quese transforma em ``35 + 34``. Então o valor do ``numero2`` é ``69``.
 
-### exemplo 3
+### Exemplo 3
 
 ```c
 // Exemplo de criação de variáveis 3
@@ -106,7 +106,7 @@ Até o momento, nós vimos o que são variáveis e tipos. Mas ainda não fazemos
 
 Um conjunto de funções, constantes e variáveis de uso genérico e reusáveis chama-se <u>biblioteca</u> ou <u>library</u> em inglês. A linguagem C tem uma biblioteca padrão que contém funções como de Entrada/Saída, operações com strings, matemática que é padronizado para compiladores de todos os sistemas operacionais, referimos esse conjunto de "coisas" como <u>biblioteca padrão</u> ou em inglês <u>standard library</u> ou simplesmente <u>std</u>.
 
-Podemos incluir partes de uma biblioteca usando a diretiva `include`. No exemplo logo abaixo vou incluir uma biblioteca chamada ``stdio`` -- A biblioteca padrão referente a Entrada/Saída -- e chamar uma de suas funções ``println()``, que escreve o que está entre parênteses na tela do usuário.
+Podemos incluir partes de uma biblioteca usando a diretiva `include`. No exemplo logo abaixo vou incluir uma biblioteca chamada ``stdio`` -- A biblioteca padrão referente a Entrada/Saída -- e chamar uma de suas funções ``printfs()``, que escreve o que está entre parênteses na tela do usuário.
 
 ```c
 // Exemplo de Saida

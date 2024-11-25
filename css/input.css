@@ -139,7 +139,12 @@ article .body p {
 }
 article .body ul{
     @apply list-disc;
+    @apply ml-4;
     @apply mb-4;
+}
+article .body li{
+    @apply list-disc;
+    @apply -mb-2;
 }
 
 article .body h1 {
@@ -150,11 +155,13 @@ article .body h1 {
 article .body h2 {
     @apply ml-2;
     @apply text-2xl;
+    @apply mb-4;
 }
 
 article .body h3 {
     @apply ml-4;
     @apply text-xl;
+    @apply mb-4;
 }
 
 article .body pre {
@@ -258,12 +265,12 @@ article .body table {
     @apply mb-4;
     @apply relative w-full text-center -translate-x-1/2 left-1/2;
     text-align: center;
-    @apply px-2;
 }
 
 
 article .body tbody tr {
     @apply bg-base1;
+    @apply px-2;
 }
 article .body tbody tr:nth-child(even) {
     @apply bg-base2;
