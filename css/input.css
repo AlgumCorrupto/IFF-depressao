@@ -65,6 +65,9 @@ footer a {
 .index-about h1 {
     @apply text-center text-3xl;
 }
+.my-urls h1 {
+    @apply text-center text-3xl;
+}
 .index-container {
     @apply flex gap-x-4 mx-4;
     @apply max-lg:flex-col;
@@ -93,6 +96,22 @@ footer a {
     overflow-x: hidden;
     @apply border-solid border-2 border-primary;
 }
+
+.my-projs {
+    /*@apply lg:w-3/5;*/
+    @apply flex flex-col;
+}
+.proj {
+    @apply mt-4;
+    @apply pt-2;
+    @apply border-primary border-solid;
+    @apply bg-base2 rounded-xl;
+    @apply lg:w-full;
+    @apply max-md:w-full;
+    @apply px-4 py-2;
+    overflow-x: hidden;
+    @apply border-solid border-2 border-primary;
+}
 .home-posts {
     @apply pt-2;
     @apply max-sm:px-0;
@@ -104,12 +123,53 @@ footer a {
     overflow-x: hidden;
 }
 
+.my-urls {
+    @apply pt-2;
+    @apply max-sm:px-0;
+    @apply bg-base2 rounded-xl;
+    @apply mt-4 text-center;
+    /*@apply lg:w-1/2;*/
+    @apply max-h-fit;
+    @apply max-md:w-full relative;
+    @apply border-solid border-2 border-terciary;
+    overflow-x: hidden;
+}
+
+.proj-head {
+    @apply text-center;
+}
+
+details summary {
+    @apply bg-base1 text-secondary;
+    @apply p-1;
+    @apply rounded-md;
+}
+
+details img {
+    @apply object-contain;
+    @apply object-center;
+    @apply max-h-64;
+    @apply w-full;
+    @apply mb-4;
+}
+
+details {
+    @apply bg-base1;
+    @apply mb-2;
+    @apply px-4;
+    @apply w-full;
+}
+
 .home-posts a {
     @apply bg-terciary text-base1;
     @apply p-0.5 rounded-md;
 }
 
 .home-posts h2 {
+    @apply text-3xl;
+}
+
+.proj h1 {
     @apply text-3xl;
 }
 
@@ -292,5 +352,7 @@ article .body tbody tr:nth-child(even) {
 }
 
 .contact {
-    @apply mt-4 mx-11 list-disc text-center;
+    @apply mx-11 list-disc;
+    @apply lg:mx-64;
+    /*@apply lg:flex lg:gap-4;*/
 }
