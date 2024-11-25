@@ -697,6 +697,13 @@ footer a {
 }
 
 @media not all and (min-width: 1024px) {
+  @media (min-width: 768px) {
+    .index-container {
+      margin-left: 2.75rem;
+      margin-right: 2.75rem;
+    }
+  }
+
   .index-container {
     flex-direction: column;
   }
@@ -1210,9 +1217,16 @@ article .body tbody tr:nth-child(even) {
 }
 
 .contact {
-  margin-left: 2.75rem;
-  margin-right: 2.75rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   list-style-type: disc;
+}
+
+@media (min-width: 768px) {
+  .contact {
+    margin-left: 2.75rem;
+    margin-right: 2.75rem;
+  }
 }
 
 @media (min-width: 1024px) {

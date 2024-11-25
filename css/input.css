@@ -69,7 +69,7 @@ footer a {
     @apply text-center text-3xl;
 }
 .index-container {
-    @apply flex gap-x-4 mx-4;
+    @apply flex gap-x-4 mx-4 max-lg:md:mx-11;
     @apply max-lg:flex-col;
 }
 
@@ -352,7 +352,8 @@ article .body tbody tr:nth-child(even) {
 }
 
 .contact {
-    @apply mx-11 list-disc;
+    @apply mx-4 list-disc;
+    @apply md:mx-11;
     @apply lg:mx-64;
     /*@apply lg:flex lg:gap-4;*/
 }
