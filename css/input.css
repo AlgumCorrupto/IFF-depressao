@@ -182,7 +182,7 @@ h1 span {
 }
 
 article {
-    @apply relative -translate-x-1/2 left-1/2 md:w-3/4 w-11/12 mt-8;
+    @apply relative -translate-x-1/2 left-1/2 lg:w-7/12 md:w-3/4 w-11/12 mt-8;
 }
 
 article .title {
@@ -209,19 +209,21 @@ article .body li{
 }
 
 article .body h1 {
+    @apply font-bold;
     @apply text-center;
-    @apply text-3xl underline underline-offset-4;
-    @apply mb-4;
+    @apply text-4xl;
+    @apply mb-2;
 }
 article .body h2 {
+    @apply font-bold;
     @apply ml-2;
-    @apply text-2xl;
+    @apply text-3xl;
     @apply mb-4;
 }
 
 article .body h3 {
     @apply ml-4;
-    @apply text-xl;
+    @apply text-2xl;
     @apply mb-4;
 }
 
@@ -294,6 +296,7 @@ article sourceCode span {
 
 article .body blockquote {
     @apply border-l-4 border-base3 pl-2 mb-4;
+    @apply leading-6;
 }
 article .body blockquote p {
     @apply mb-0;

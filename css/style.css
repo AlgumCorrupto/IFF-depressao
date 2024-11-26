@@ -961,6 +961,12 @@ article {
   }
 }
 
+@media (min-width: 1024px) {
+  article {
+    width: 58.333333%;
+  }
+}
+
 article .title {
   font-size: 3rem;
   line-height: 1;
@@ -1000,25 +1006,25 @@ article .body li {
 }
 
 article .body h1 {
+  font-weight: 700;
   text-align: center;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  text-decoration-line: underline;
-  text-underline-offset: 4px;
-  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 article .body h2 {
+  font-weight: 700;
   margin-left: 0.5rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   margin-bottom: 1rem;
 }
 
 article .body h3 {
   margin-left: 1rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -1117,6 +1123,7 @@ article .body blockquote {
   --tw-border-opacity: 1;
   border-color: rgb(44 44 37 / var(--tw-border-opacity));
   padding-left: 0.5rem;
+  line-height: 1.5rem;
 }
 
 article .body blockquote p {
