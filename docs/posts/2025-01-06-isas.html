@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+        <title>IFF da depressão - Arquitetura do Conjunto de instruções</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="icon" type="image/x-con" href="../images/favicon.ico">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="title">
+                <p class="filler">:::::::::::::::::</p>
+                              <h1>IFF da depressão</h1>
+                <p class="filler">:::::::::::::::::</p>
+            </div>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../contact.html">Portifólio</a>
+                <a href="../rss.xml">RSS</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <article>
+    <section class="title">Arquitetura do Conjunto de instruções</section>
+    <p class="filler">=========================================</p>
+    <section class="header">
+        Postado em January  6, 2025
+        
+            por Paulo Artur
+        
+    </section>
+    <section class="body">
+        <h1 id="definição">Definição</h1>
+<p>ISA ou Instruction Set Architecture em compiladores representa a maneira que arquitetura de um conjuntos de instruções
+de uma determinada linguagem estruturada pode ser classificada.</p>
+<p>Nós podemos classificar conjunto de instruções de uma CPU, bytecodes,
+linguagens esotéricas até coisas como receita de cozinha usando ISAs.
+É mais um conceito teórico do que técnico em si.</p>
+<p>Mas afinal, o que são os conjuntos de instruções? É o conjunto de possíveis operações em que podem ser executadas dentre um determinado contexto.</p>
+<p>Exemplo:</p>
+<ul>
+<li><p>Contexto: máquina de empilhar cadernos.</p></li>
+<li><p>Cojunto de instruções: colocar caderno na pilha, tirar caderno da pilha, trocar os lugares dos 2 primeiros cadernos do topo da pilha…</p></li>
+</ul>
+<p>Os tipos mais famosos de ISAs são o RISC e CISC, e o menos conhecido o OISC. Na verdade existem vários e vários tipos de ISAs, quando uma fabricante cria uma nova arquitetura de CPUs mas ela não consegue explicar o conjunto de instruções usando algum outro tipo reconhecido, elas literalmente criam nova termologia, isso foi o caso da CPU Itanium, que foi definido uma nova ISA, a EPIC.</p>
+<p>A diferença entre RISC e CISC é simples, RISC é usado a classificação de ISAs onde há um número reduzido de instruções, idealmente somente instruções de propósito gereal, já CISC há vários subconjuntos de instruções, por exemplo CPUs amd64 tem suas próprias instruções de propósito geral, suporte para o x86, 8086 além das várias extensões de arquiteturas que são seus próprios subconjuntos.</p>
+<h1 id="exemplos-de-isas-usando-esolangs">Exemplos de ISAs, usando esolangs</h1>
+<p>Usar linguagens de programação esotéricas como exemplos é algo que acho mais natural do que usar assembly de CPUs
+justamente por serem algo de maior nível de abstração.</p>
+<h2 id="oisc">OISC</h2>
+<p>OISC é a classificação de conjuntos de instruções onde há apenas 1 instrução, como é o caso da linguagem FlipJump!</p>
+<p>FlipJump é uma linguagem de programação intecionada a ser a linguagem de programação mais primitiva que existe. É uma lingagem de programação que contém apenas uma instrução, onde não existe o conceito de bytes, words,
+nimble, apenas bits mas ainda sim é possível fazer qualquer computação moderna.
+A maneira que essa linguagem funciona é extremamente simples. Existe um número “infinito” células, cada célula possui largura de 1 bit.
+A instrução aceita 2 argumentos, que são eles:</p>
+<ul>
+<li><p>Flip (primeiro argumento) - O offset (relativo ao ponteiro da celula atual) da célula para ter seu valor invertido.</p></li>
+<li><p>Jump (segundo argumento) - O novo valor do ponteiro.</p></li>
+</ul>
+<p>O programa consiste em uma lista dessas instruções que são executados sequênciamente.</p>
+<h2 id="risc">RISC</h2>
+<p>RISC é a classificação de conjuntos de instruções onde idealmente existem apenas instruções de propósito geral (manipulação de memória &amp; aritmética).</p>
+<p>Brainfuck é uma linguagem de programação esotérica que simula uma máquina de turing em toda sua glória.</p>
+<p>Ela opera numa “fita” de memória de 30.000 células, sendo que cada célula tem 1 byte de largura.</p>
+<p>Ela contém 8 operadores, sendo eles:</p>
+<ul>
+<li><p><span class="math inline">\(+\)</span> Incrementa o valor na célula atual.</p></li>
+<li><p><span class="math inline">\(-\)</span> Decrementa o valor na célula atual.</p></li>
+<li><p><span class="math inline">\(&gt;\)</span> Incrementa o ponteiro da célula atual.</p></li>
+<li><p><span class="math inline">\(&lt;\)</span> Decrementa o ponteiro da célula atual.</p></li>
+<li><p><span class="math inline">\([\)</span> Vai para o <span class="math inline">\(]\)</span> correspondente se o valor da célula atual for 0.</p></li>
+<li><p><span class="math inline">\(]\)</span> Vai para o <span class="math inline">\([\)</span> correspondente se o valor da célula atual diferente 0.</p></li>
+</ul>
+<p>Essa linguagem contém apenas 8 operadores de propósito geral então podemos classifica-la como RISC.</p>
+<h2 id="cisc">CISC</h2>
+<p>Não existem esolangs classificadas como CISC no mundo real, o mais próximo que temos são linguagens de programações que contém vários operadores,
+como é o caso de C++.</p>
+<p>Essa linguagem contém aproximadamente 80 palavras chaves, não incluindo as funcionalidades fornecidas pela biblioteca padrão, a qual que qualquer compilador
+compatível precisa implementar.</p>
+<p>Isso em minha opinião classificaria essa linguagem com modelo de arquitetura CISC.</p>
+<h1 id="sobre-as-cpus">Sobre as CPUs</h1>
+<p>Nos dias atuais existem duas arquiteturas de processadores predominantes, x86 e ARM, uma tendo seu conjunto de instruções classificado como CISC e outro RISC.
+Não existe e nunca existiu um processador comercial com conjunto de instruções tipo OISC, esse modelo é simplesmente inviável.</p>
+<p>os CPUs ARM tem um número aproximado de 50 instruções diferentes que são de propósito geral, por esse número de instruções ser pequeno
+abre um espaço maior para a otimização dessas instruções que resulta nelas consumindo menos .
+Agora uma desvantagem dessas CPUs pelas suas instruções serem mais genéricas pode ser que algoritmos que precisam de instruções mais especializadas
+sejam mais lentas.</p>
+<p>Os CPUs x86 modernos, existem aproximadamente 1000 instruções diferentes, óbviamente que a grande maioria delas não são de propósito geral
+– o software raramente usa elas. Há menos espaço para a otimização das instruções de propósito geral,
+o que falta na otimização de instruções de uso geral ele retribui como instruções especializadas.</p>
+    </section>
+</article>
+
+        </main>
+
+        <footer>
+            <br>
+            <p class="filler">-----------------------</p>
+            <p>Esse site foi orgulhosamente gerado usando <a href="https://jaspervdj.be/hakyll/">Hakyll</a></p>
+            <p class="filler">-----------------------</p>
+        </footer>
+    </body>
+</html>

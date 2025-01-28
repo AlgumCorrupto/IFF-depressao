@@ -7,8 +7,86 @@
         <description><![CDATA[Todos os Posts da página IFF da Depressão]]></description>
         <atom:link href="https://algumcorrupto.github.io/IFF-depressao//rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Tue, 26 Nov 2024 00:00:00 UT</lastBuildDate>
+        <lastBuildDate>Mon, 06 Jan 2025 00:00:00 UT</lastBuildDate>
         <item>
+    <title>Arquitetura do Conjunto de instruções</title>
+    <link>https://algumcorrupto.github.io/IFF-depressao//posts/2025-01-06-isas.html</link>
+    <description><![CDATA[<article>
+    <section class="title">Arquitetura do Conjunto de instruções</section>
+    <p class="filler">=========================================</p>
+    <section class="header">
+        Postado em January  6, 2025
+        
+            por Paulo Artur
+        
+    </section>
+    <section class="body">
+        <h1 id="definição">Definição</h1>
+<p>ISA ou Instruction Set Architecture em compiladores representa a maneira que arquitetura de um conjuntos de instruções
+de uma determinada linguagem estruturada pode ser classificada.</p>
+<p>Nós podemos classificar conjunto de instruções de uma CPU, bytecodes,
+linguagens esotéricas até coisas como receita de cozinha usando ISAs.
+É mais um conceito teórico do que técnico em si.</p>
+<p>Mas afinal, o que são os conjuntos de instruções? É o conjunto de possíveis operações em que podem ser executadas dentre um determinado contexto.</p>
+<p>Exemplo:</p>
+<ul>
+<li><p>Contexto: máquina de empilhar cadernos.</p></li>
+<li><p>Cojunto de instruções: colocar caderno na pilha, tirar caderno da pilha, trocar os lugares dos 2 primeiros cadernos do topo da pilha…</p></li>
+</ul>
+<p>Os tipos mais famosos de ISAs são o RISC e CISC, e o menos conhecido o OISC. Na verdade existem vários e vários tipos de ISAs, quando uma fabricante cria uma nova arquitetura de CPUs mas ela não consegue explicar o conjunto de instruções usando algum outro tipo reconhecido, elas literalmente criam nova termologia, isso foi o caso da CPU Itanium, que foi definido uma nova ISA, a EPIC.</p>
+<p>A diferença entre RISC e CISC é simples, RISC é usado a classificação de ISAs onde há um número reduzido de instruções, idealmente somente instruções de propósito gereal, já CISC há vários subconjuntos de instruções, por exemplo CPUs amd64 tem suas próprias instruções de propósito geral, suporte para o x86, 8086 além das várias extensões de arquiteturas que são seus próprios subconjuntos.</p>
+<h1 id="exemplos-de-isas-usando-esolangs">Exemplos de ISAs, usando esolangs</h1>
+<p>Usar linguagens de programação esotéricas como exemplos é algo que acho mais natural do que usar assembly de CPUs
+justamente por serem algo de maior nível de abstração.</p>
+<h2 id="oisc">OISC</h2>
+<p>OISC é a classificação de conjuntos de instruções onde há apenas 1 instrução, como é o caso da linguagem FlipJump!</p>
+<p>FlipJump é uma linguagem de programação intecionada a ser a linguagem de programação mais primitiva que existe. É uma lingagem de programação que contém apenas uma instrução, onde não existe o conceito de bytes, words,
+nimble, apenas bits mas ainda sim é possível fazer qualquer computação moderna.
+A maneira que essa linguagem funciona é extremamente simples. Existe um número “infinito” células, cada célula possui largura de 1 bit.
+A instrução aceita 2 argumentos, que são eles:</p>
+<ul>
+<li><p>Flip (primeiro argumento) - O offset (relativo ao ponteiro da celula atual) da célula para ter seu valor invertido.</p></li>
+<li><p>Jump (segundo argumento) - O novo valor do ponteiro.</p></li>
+</ul>
+<p>O programa consiste em uma lista dessas instruções que são executados sequênciamente.</p>
+<h2 id="risc">RISC</h2>
+<p>RISC é a classificação de conjuntos de instruções onde idealmente existem apenas instruções de propósito geral (manipulação de memória &amp; aritmética).</p>
+<p>Brainfuck é uma linguagem de programação esotérica que simula uma máquina de turing em toda sua glória.</p>
+<p>Ela opera numa “fita” de memória de 30.000 células, sendo que cada célula tem 1 byte de largura.</p>
+<p>Ela contém 8 operadores, sendo eles:</p>
+<ul>
+<li><p><span class="math inline">\(+\)</span> Incrementa o valor na célula atual.</p></li>
+<li><p><span class="math inline">\(-\)</span> Decrementa o valor na célula atual.</p></li>
+<li><p><span class="math inline">\(&gt;\)</span> Incrementa o ponteiro da célula atual.</p></li>
+<li><p><span class="math inline">\(&lt;\)</span> Decrementa o ponteiro da célula atual.</p></li>
+<li><p><span class="math inline">\([\)</span> Vai para o <span class="math inline">\(]\)</span> correspondente se o valor da célula atual for 0.</p></li>
+<li><p><span class="math inline">\(]\)</span> Vai para o <span class="math inline">\([\)</span> correspondente se o valor da célula atual diferente 0.</p></li>
+</ul>
+<p>Essa linguagem contém apenas 8 operadores de propósito geral então podemos classifica-la como RISC.</p>
+<h2 id="cisc">CISC</h2>
+<p>Não existem esolangs classificadas como CISC no mundo real, o mais próximo que temos são linguagens de programações que contém vários operadores,
+como é o caso de C++.</p>
+<p>Essa linguagem contém aproximadamente 80 palavras chaves, não incluindo as funcionalidades fornecidas pela biblioteca padrão, a qual que qualquer compilador
+compatível precisa implementar.</p>
+<p>Isso em minha opinião classificaria essa linguagem com modelo de arquitetura CISC.</p>
+<h1 id="sobre-as-cpus">Sobre as CPUs</h1>
+<p>Nos dias atuais existem duas arquiteturas de processadores predominantes, x86 e ARM, uma tendo seu conjunto de instruções classificado como CISC e outro RISC.
+Não existe e nunca existiu um processador comercial com conjunto de instruções tipo OISC, esse modelo é simplesmente inviável.</p>
+<p>os CPUs ARM tem um número aproximado de 50 instruções diferentes que são de propósito geral, por esse número de instruções ser pequeno
+abre um espaço maior para a otimização dessas instruções que resulta nelas consumindo menos .
+Agora uma desvantagem dessas CPUs pelas suas instruções serem mais genéricas pode ser que algoritmos que precisam de instruções mais especializadas
+sejam mais lentas.</p>
+<p>Os CPUs x86 modernos, existem aproximadamente 1000 instruções diferentes, óbviamente que a grande maioria delas não são de propósito geral
+– o software raramente usa elas. Há menos espaço para a otimização das instruções de propósito geral,
+o que falta na otimização de instruções de uso geral ele retribui como instruções especializadas.</p>
+    </section>
+</article>
+]]></description>
+    <pubDate>Mon, 06 Jan 2025 00:00:00 UT</pubDate>
+    <guid>https://algumcorrupto.github.io/IFF-depressao//posts/2025-01-06-isas.html</guid>
+    <dc:creator>Paulo Villaça</dc:creator>
+</item>
+<item>
     <title>Modelos computacionais</title>
     <link>https://algumcorrupto.github.io/IFF-depressao//posts/2024-11-26-von-newmann.html</link>
     <description><![CDATA[<article>
@@ -60,7 +138,7 @@
 </ul>
 <p>As linguagens da família assembly são um exemplo de máquina de turing! Onde os símbolos são os <i>opcodes</i>, o alfabeto é o <i>instruction set</i>, a agulha é o <i>stack pointer</i> e o estado atual é a memória.</p>
 <h1 id="cálculo-lambda">Cálculo lambda</h1>
-<p>Cálculo lambda é um outro modelo computacional, criado também para descrever o que e não é computável – mesma finalidade do modelo de Turing – e coincidentemente criado pelo instrutor de doutorado do Turing, Alonso Church.</p>
+<p>Cálculo lambda é um outro modelo computacional, criado também para descrever o que e não é computável – mesma finalidade do modelo de Turing – e coincidentemente criado pelo instrutor de doutorado do Turing, Alonzo Church.</p>
 <p>Esse na minha opinião esse é o modelo mais abstrato e matemático comparado entre os 3 já mencionados e por natureza um pouco mais complicado de entender. Eu também não tenho uma qualificação ideal para explicar esses modelo corretamente, então recomendo bastante a série sobre programação funcional da UFABC, que é a melhor que já encontrei no youtube discutindo sobre o assunto: <a href="https://www.youtube.com/watch?v=U7gdzYiFJKg&amp;list=PLYItvall0TqJ25sVTLcMhxsE0Hci58mpQ">link da série</a>.</p>
     </section>
 </article>
@@ -82,14 +160,14 @@
         
     </section>
     <section class="body">
-        <p>C é uma linguagem que é bastante antiga e com uma comunidade bastante madura, em início de sua história ocorreram bastantes mudanças, mais notavelmente do C estilo K&amp;R para o popular ANSI C, que é usado como ferramenta de aprendizado mundialmente em várias instituições de ensino com o objetivo de introduzir tópicos relacionados a programação e algoritmos de uma maneira mais prática.</p>
-<p>No entanto a linguagem de programação C continua evoluindo e novos recursos vem sendo adicionados com o objetivo de moderniza-la para que ela continue sendo competitiva com as demais novas linguagens de programação que surgiram nesses últimos anos.</p>
-<p>O C moderno é padronizado pela <a href="https://www.open-std.org/jtc1/sc22/wg14/">ISO/IEC JTC1/SC22/WG14</a>, organização que padroniza a linguagem C desde 1990 até os dias atuais 2014, tendo a última atualização no documento agora em 28 de julho de 2024.</p>
-<p>Nesse artigo vamos documentar alguns dos novos recursos que mais achei interessante e talvez mude a maneira que você programe nessa linguagem.</p>
+        <p>C é uma linguagem que bastante antiga e com uma comunidade bastante madura, em início de sua história ocorreram bastantes mudanças, mais notavelmente do C estilo K&amp;R para o popular ANSI C. Essa linguagem é tão universalmente conhecida que alguns até a chamam de linguagem de programação oficial do nosso planeta.</p>
+<p>A linguagem de programação C continua evoluindo e novos recursos vem sendo adicionado com o objetivo de moderniza-la.</p>
+<p>O C moderno é padronizado pela <a href="https://www.open-std.org/jtc1/sc22/wg14/">ISO/IEC JTC1/SC22/WG14</a>, essa organização padroniza a linguagem desde 1990 até os dias atuais. Vamos explorar algumas das adições feitas última década até agora.</p>
+<p>Nesse artigo vamos documentar alguns dos novos recursos que mais achei interessante e talvez mude a maneira que você programe em C.</p>
 <h1 id="bitint">_BitInt</h1>
-<p><code>_BitInt()</code>, antes chamado de <code>_Extint</code> em propóstas passadas é um tipo de largura-bit arbitrário, ou seja, permite você criar números inteiros de qualquer tamanho. É análogo a recurso da linguagem zig que permite o mesmo comportamento.</p>
-<p>Mas quais seriam os casos de uso do <code>_BitInt()</code>? Imagina que você está escrevendo um sistema para fazer a conversão de strings em Base64 para strings padrão? Um caractere Base64 tem 6 bits de largura, então um valor de tipo <code>_BitInt(6)</code> seria ideal para armazenar o valor desse carectere 6 bits-wide.</p>
-<p>Ou até pode ser usado para armazenar números extremamente grandes.</p>
+<p><code>_BitInt()</code>, antes chamado de <code>_Extint</code> em propóstas passadas é um tipo de largura-bit arbitrário, ou seja, permite você criar números inteiros de qualquer tamanho. É análogo ao recurso da linguagem zig que permite o mesmo comportamento.</p>
+<p>Mas quais seriam os casos de uso do <code>_BitInt()</code>? Imagine que você está escrevendo um sistema de conversão de strings em Base64 para strings padrão? Um caractere Base64 tem 6 bits de largura, se usarmos um <code>char</code>, tipo que tem 8 bits de largura para representar cada átomo de um Base64 estariamos gastando memória atoa, então um valor de tipo <code>_BitInt(6)</code> seria ideal para armazenar o valor desse carectere 6 bits-wide.</p>
+<p>Ou até pode ser usado para armazenar números extremamente grandes como no exemplo abaixo.</p>
 <h3 id="exemplo-_bitint">Exemplo _BitInt:</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// exemplo trabalhando com números extremamente grandes</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
@@ -102,9 +180,9 @@
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="esse-programa-produz-a-saída">Esse programa produz a saída:</h3>
 <pre><code>2^(2^20) é par!</code></pre>
-<p>Atualmente esse recurso está para ser amplamente implementado depois de 2025, atualmente até por onde eu sei apenas LLVM/Clang tem uma implementação do <code>_BitInt</code>.</p>
+<p>Atualmente esse recurso está para ser amplamente implementado depois de 2025. Atualmente até por onde eu sei apenas LLVM/Clang tem uma implementação do <code>_BitInt</code>.</p>
 <h1 id="stdarg.h">stdarg.h</h1>
-<p><code>stdarg.h</code> define comportamentos com funções similares ao <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">rest parameters do javascript</a>, em que são para que funções aceitem um número indefinido de parâmetros.</p>
+<p><code>stdarg.h</code> define comportamentos similares ao <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">rest parameters do javascript</a> ou kwargs do python, uma maneira de encapsular o resto dos parâmetros de uma função não nomeados.</p>
 <h3 id="exemplo-sobre-stdarg.h-da-wikipedia">Exemplo sobre <code>stdarg.h</code> da wikipedia:</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// somatório de números</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -132,7 +210,7 @@
 <h3 id="esse-programa-produz-a-saída-1">Esse programa produz a saída:</h3>
 <pre><code>4</code></pre>
 <h1 id="stdbit.h">stdbit.h</h1>
-<p>Tratamento e criação de novos tipos de dados primitivos parecem ser um tema para o C Moderno. Foi introduzido um completo novo módulo da biblioteca padrão para justamente trazer novas operações e utilidades para números binários. Agora vou trazer uma quote traduzida da especificação atual do C23</p>
+<p>Tratamento e criação de novos tipos de dados primitivos parecem ser um tema para o C Moderno. Foi introduzido um completo novo módulo da biblioteca padrão para justamente trazer novas operações e utilidades para números binários. Agora vou trazer uma quote traduzida da especificação atual do C23:</p>
 <blockquote>
 <p>O Header <code>&lt;stdbit.h&gt;</code> define macros, tipos e funções para trabalhar com a representação binária e byte de diversos tipos, tipicamente tipos inteiros. Esse header torna disponível o tipo <code>size_t</code> e qualquer tipo <code>uintN_t</code>, <code>intN_t</code>, <code>uint_leastN_T</code>, ou <code>int_leastN_t</code> definidos pela implementação.</p>
 </blockquote>
@@ -144,9 +222,6 @@
 <li><p>Computação do menor número de bits possível para armazenar um valor.</p></li>
 </ul>
 <p>Imagino que funções oferecidas pelo <code>&lt;stdbit.h&gt;</code> sejam interessantes para quem trabalha com processamento de sinais, imagens ou arquivos binários.</p>
-<h1 id="multi-threading-na-biblioteca-padrão">Multi-threading na biblioteca padrão</h1>
-<p>Multi-threading estava presente desde C11, no entanto eu considero isso um recurso de C moderno vejo esse recurso sendo um tanto subutilizado em relação os outros recursos. Geralmente quando vejo alguém utilizando threads na linguagem C, vejo ela utilizando as bibliotecas oferecidas pelo próprio sistema operacional, como POSIX threads ou as threads da WINAPI.</p>
-<p>Os primitivos de threads do C moderno estão definidas no cabeçalho <code>&lt;threads.h&gt;</code>, tal que contém funções para criação, destruição de threads e passagem de mensagem entre as threads. Também existe outro cabeçalho que vai par a par com <code>&lt;threads.h&gt;</code> chamada <code>&lt;stdatomic.h&gt;</code>, que define tipos de dados atômicos – aqueles feitos para serem compartilhado entre threads.</p>
     </section>
 </article>
 ]]></description>
@@ -168,7 +243,7 @@
     </section>
     <section class="body">
         <p>Nesse artigo vamos ver a estrutura básica de um programa escrito em C, variáveis, tipos, entrada/saída básica entre outros.</p>
-<p>C é uma linguagem de programação criada em Bell Labs por Brian Kerninghan e Dennis Ritchie por volta dos anos 70 para sistemas UNIX como uma ferramenta para facilitar o processo de desenvolvimento de aplicações, convertendo código que seria mais fácil um humano entender para código de máquina, esse processo é feito por um programa chamado <u>compilador</u>.</p>
+<p>C é uma linguagem de programação criada em Bell Labs por Brian Kerninghan e Dennis Ritchie por volta dos anos 70 para sistemas UNIX como uma ferramenta para facilitar o processo de desenvolvimento de aplicações, convertendo código similar ao pseudocódigo, que um humano poderia facilmente entender para código de máquina, esse processo é feito por um programa chamado <u>compilador</u>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">//Um programa de C tem estrutura básica:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>

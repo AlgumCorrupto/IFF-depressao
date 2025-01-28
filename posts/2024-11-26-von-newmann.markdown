@@ -53,6 +53,6 @@ As linguagens da família assembly são um exemplo de máquina de turing! Onde o
 
 # Cálculo lambda
 
-Cálculo lambda é um outro modelo computacional, criado também para descrever o que e não é computável -- mesma finalidade do modelo de Turing -- e coincidentemente criado pelo instrutor de doutorado do Turing, Alonso Church.
+Cálculo lambda é um outro modelo computacional, criado também para descrever o que e não é computável -- mesma finalidade do modelo de Turing -- e coincidentemente criado pelo instrutor de doutorado do Turing, Alonzo Church.
 
 Esse na minha opinião esse é o modelo mais abstrato e matemático comparado entre os 3 já mencionados e por natureza um pouco mais complicado de entender. Eu também não tenho uma qualificação ideal para explicar esses modelo corretamente, então recomendo bastante a série sobre programação funcional da UFABC, que é a melhor que já encontrei no youtube discutindo sobre o assunto: [link da série](https://www.youtube.com/watch?v=U7gdzYiFJKg&list=PLYItvall0TqJ25sVTLcMhxsE0Hci58mpQ).

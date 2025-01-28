@@ -4,7 +4,7 @@ Meu blog pessoal. https://algumcorrupto.github.io/IFF-depressao/
 
 ## Reminder para mim mesmo
 
-Requerimento:
+### Requerimento:
 
 - ghcup - Gerenciador de versão do haskell
 
