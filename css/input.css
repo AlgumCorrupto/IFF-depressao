@@ -205,6 +205,7 @@ article .body ul{
 }
 article .body li{
     @apply list-disc;
+    @apply ml-2;
     @apply -mb-4;
 }
 
@@ -216,15 +217,13 @@ article .body h1 {
 }
 article .body h2 {
     @apply font-bold;
-    @apply ml-2;
     @apply text-3xl;
-    @apply mb-4;
+    @apply mb-2;
 }
 
 article .body h3 {
-    @apply ml-4;
     @apply text-2xl;
-    @apply mb-4;
+    @apply mb-2;
 }
 
 article .body pre {
