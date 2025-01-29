@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+        <title>IFF da depressão - 3 Maneiras de Escrever "Hello World" em ASM</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="icon" type="image/x-con" href="../images/favicon.ico">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="title">
+                <p class="filler">:::::::::::::::::</p>
+                              <h1>IFF da depressão</h1>
+                <p class="filler">:::::::::::::::::</p>
+            </div>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../contact.html">Portifólio</a>
+                <a href="../rss.xml">RSS</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <article>
+    <section class="title">3 Maneiras de Escrever "Hello World" em ASM</section>
+    <p class="filler">=========================================</p>
+    <section class="header">
+        Postado em January 29, 2024
+        
+            por Paulo
+        
+    </section>
+    <section class="body">
+        <p>Eu durante essas as férias do final de ano explorei alguns novos assuntos, inclusive algumas coisas relacionadas a
+linguagem de programação amd64 linux e quero descobrir alguns de dos meus estudos aqui.</p>
+<p>Assembly é uma linguagem de programação de nível baixo, significa que ela traduz 1:1 para o comportamento das CPUs, existem vários asseblers – que são programas que
+traduzem texto de assembly para machine code, cada um com suas variações, hoje eu vou trabalhar com o Flat Assembler. Além disso existem várias sintaxes
+para representar código em assembly, os mais famosos sendo a sintaxe do GNU Assembly, Sintaxe da A&amp;T e a Sintaxe da Intel. Vamos usar nesse artigo a sintaxe da Intel – a que eu acho mais legível. a diferença mais impactante entre o A&amp;T e Intel é a ordem dos argumentos da instrução, sendo que na sintaxe da intel</p>
+<ul>
+<li><p>A instrução na sintaxe intel tem estrutura básica: <code>&lt;instrução&gt; &lt;saída&gt; &lt;entrada&gt;</code></p></li>
+<li><p>Enquanto na sintaxe A&amp;T tem estrutura básica: <code>&lt;instrução&gt; &lt;entrada&gt; &lt;saída&gt;</code></p></li>
+</ul>
+<p>Compiladores GNU também podem gerar código assembly para nós, se especificarmos a flag <code>-S</code>, e gerar código na sintaxe intel com a flag <code>-masm</code>.
+Tente escrever um simples Olá Mundo em C e use esse comando de compilação (assumindo que o nome do seu programa é hello.c) <code>gcc hello.c -S -masm=intel -o hello.asm</code>.</p>
+<p>O código gerado pode ser parecido com isso:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>	.<span class="dt">file</span>	<span class="st">&quot;hello.c&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>	.intel_syntax noprefix</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>	.text</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>	.<span class="bu">section</span>	<span class="op">.</span>rodata</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">.LC0:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>	.string	<span class="st">&quot;Ola Mundo&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>	.text</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>	.globl	main</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>	.type	main<span class="op">,</span> <span class="fu">@f</span>unction</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">main:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.LFB0:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>	.cfi_startproc</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>	<span class="bu">push</span>	<span class="kw">rbp</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>	.cfi_def_cfa_offset <span class="dv">16</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>	.cfi_offset <span class="dv">6</span><span class="op">,</span> <span class="op">-</span><span class="dv">16</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>	<span class="bu">mov</span>	<span class="kw">rbp</span><span class="op">,</span> <span class="kw">rsp</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>	.cfi_def_cfa_register <span class="dv">6</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>	<span class="bu">lea</span>	<span class="kw">rax</span><span class="op">,</span> <span class="op">.</span>LC0<span class="op">[</span>rip<span class="op">]</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>	<span class="bu">mov</span>	<span class="kw">rdi</span><span class="op">,</span> <span class="kw">rax</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>	<span class="cf">call</span>	puts<span class="fu">@</span><span class="er">P</span>LT</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>	<span class="bu">mov</span>	<span class="kw">eax</span><span class="op">,</span> <span class="dv">0</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>	<span class="bu">pop</span>	<span class="kw">rbp</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>	.cfi_def_cfa <span class="dv">7</span><span class="op">,</span> <span class="dv">8</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>	<span class="cf">ret</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>	.cfi_endproc</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">.LFE0:</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>	.size	main<span class="op">,</span> <span class="op">.-</span>main</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>	.ident	<span class="st">&quot;GCC: (GNU) 14.2.1 20240910&quot;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>	.<span class="bu">section</span>	<span class="op">.</span>note<span class="op">.</span>GNU<span class="op">-</span>stack<span class="op">,</span><span class="st">&quot;&quot;</span><span class="op">,</span><span class="fu">@</span><span class="er">p</span>rogbits</span></code></pre></div>
+<p>Essa esse é o assembly gerado por um simples Olá Mundo, percebe-se que o assembly gerado é muito grande e complexo, não? Nós podemos escrever
+um código muito menor e que faz a mesma coisa, vamos ver algumas maneiras de re-escrever esse programa usando FASM!</p>
+<h1 id="método-1">Método 1</h1>
+<p>Primeiro antes de tudo, vamos recapitular 3 conceitos importantes, que todo programador de assembly precisa saber: instruções, memória e syscalls</p>
+<h3 id="instruções">Instruções</h3>
+<p>Instruções são o que é executadas pelo processador, todo processador que se prese implementa 2 tipos de instruções, a de manipulação de memória e aritmética</p>
+<h3 id="memória">Memória</h3>
+<p>Existem 3 níveis de memória quando numa máquina Von Neumann:</p>
+<ul>
+<li><p>Registradores: Memória embutida na CPU, geralmente contendo um número pequeno deles, em amd64 existem 48 registradores (registradores de uso específico como o Program Counter incluso), todos com 64 bits de largura, valores são pegos da memória RAM e armazenados em registradores para uso imediato.</p></li>
+<li><p>Memória RAM: Instruções quando não estão sendo executadas e outros objetos omo variáveis são armazenadas aqui</p></li>
+<li><p>Memória secundária: (HDD, SSD) arquivos estáticos são armazenados aqui, interface com a memória secundária é feita pelas chamadas de sistema ou instruções de I/O.</p></li>
+</ul>
+<h3 id="syscalls">Syscalls</h3>
+<p>Em sistemas operacionais existem 2 conceitos, <u>user-mode/userland</u> e <u>kernel-mode/kernelland</u>. A parte core do sistema operacinal – que lida com I/O de hardware, implementação de protocolos de Redes, scheduling de processos, chama-se kernel. Já os diversos outros programas por segurança não tem acesso as essas instruções privilegiadas e perigosas, então esses programas user-mode precisam solicitar para o kernel fazer essas tarefas para ele, e a maneira que esses programas solicita serviços é por meio das <u>syscalls</u> ou <u>chamadas de sistema</u>.</p>
+<p>Cada syscall tem um ID, e maneira que são chamadas as syscalls (ou qualquer rotina em assembly) é mover os valores certos para os registradores certos e chamar a instrução <code>syscall</code>.
+No linux eu uso essa tabela como referência https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/.
+Por exemplo se eu quero escrever alguma coisa no terminal eu executo esse algoritmo</p>
+<ul>
+<li><p>Mover valor 1 para o registrador <code>rax</code> (ID da ssyscall)</p></li>
+<li><p>Mover valor 1 para o registrador <code>rdi</code> (ID para stdout)</p></li>
+<li><p>Mover o endereço do começo do meu texto para <code>rsi</code></p></li>
+<li><p>Mover o tamanho do meu texto para <code>rdx</code></p></li>
+<li><p>Fazer a Chamada</p></li>
+</ul>
+<p>Alguns exemplos de syscalls: manipulação de arquivos no disco rígido, escrita no stdout (terminal), criação de novos processos, criação de sockets.</p>
+<h3 id="peculiaridades-do-fasm">Peculiaridades do FASM</h3>
+<p>Cada assembler tem suas próprias peculiaridades na forma de escrever o assembly, no FASM existem o que é chamado de diretivas, que são algumas funcionalidades que definem comportamento extras na hora do assembler gerar o arquivo binário. Por exemplo a diretiva <code>format</code> define qual o formato do arquivo gerar como saída, <code>segment</code> define as permissões de cada segmento de código (pensa como se fosse o chmod do linux e <code>entry</code> define a partir de qual <u>label</u> devo começar a executar o programa.</p>
+<p>Obs: label é basicamente um nome para uma posição no meu programa, nada demais.</p>
+<h3 id="o-código-em-si">O código em si</h3>
+<p>Sem mais demora aqui está Olá Mundo em FASM:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">format</span> ELF64 executable</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">segment</span> readable executable</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">entry</span> main</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">main:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rax</span><span class="op">,</span> <span class="dv">1</span>           <span class="co">;; mover ID da syscall write (basicamente printf do C) para rax</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdi</span><span class="op">,</span> <span class="dv">1</span>           <span class="co">;; mover ID da flag stdout para rdi</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rsi</span><span class="op">,</span> msg         <span class="co">;; mover endereço do começo do meu texto para rsi</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdx</span><span class="op">,</span> msg_len     <span class="co">;; mover o tamanho da minha mensagem para rdx</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>   <span class="cf">syscall</span>              <span class="co">;; efetuar a syscall</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rax</span><span class="op">,</span> <span class="dv">60</span>          <span class="co">;; mover ID da syscall para terminar o programa seguramente (masicamente o return do C)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdi</span><span class="op">,</span> <span class="dv">0</span>           <span class="co">;; mover código de retorno, para rdi</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>   <span class="cf">syscall</span>              <span class="co">;; efetuar a chamada de sistema</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">segment</span> readable writable</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>msg <span class="dt">db</span> <span class="st">&quot;Ola Mundo!&quot;</span><span class="op">,</span> <span class="dv">10</span> <span class="co">;; defini uma string de bytes no final do arquivo contendo &quot;Ola Mundo!\n&quot; (10 é o código para \n)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>msg_len <span class="op">=</span> <span class="op">$-</span>msg         <span class="co">;; defino o tamanho da mensagem sendo $ (o endereço da linha atual) - (menos) msg (o endereço do começo da mensagem)</span></span></code></pre></div>
+<h1 id="método-2">Método 2</h1>
+<p>Já ouviu falar de macros do C/C++? Eles também estão presentes no fasm, esse novo método é uma possível refatoração desse primeiro código</p>
+<p>Caso não sabia o que é macros, eles são unidades de códigos reusávies que você define e que são literalmente copiados e colados nos lugares que
+são chamados.</p>
+<h3 id="preste-atenção-de-como-agora-ficou-a-rotina-main">Preste atenção de como agora ficou a rotina main:</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">entry</span> main</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">main:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  print hello<span class="op">,</span> hello<span class="op">.</span>size</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  print goodbye<span class="op">,</span> goodbye<span class="op">.</span>size</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  return <span class="dv">0</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">segment</span> readable writable</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>hello string <span class="st">&quot;Hello, World!&quot;</span><span class="op">,</span> <span class="dv">10</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>goodbye string <span class="st">&quot;Goodbye, World!&quot;</span><span class="op">,</span> <span class="dv">10</span></span></code></pre></div>
+<p>Olha que maravilha! Nem parece assembly.</p>
+<h3 id="agora-o-código-completo-comentado">Agora o código completo comentado:</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">format</span> ELF64 executable</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">segment</span> readable executable</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="pp">macro</span> print msg<span class="op">,</span> size <span class="op">{</span> <span class="co">;; transformei o boilerplate de imprimir mensagens numa macro</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rax</span><span class="op">,</span> <span class="dv">1</span>           <span class="co">;; mover ID da syscall write (basicamente printf do C) para rax</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdi</span><span class="op">,</span> <span class="dv">1</span>           <span class="co">;; mover ID da flag stdout para rdi</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rsi</span><span class="op">,</span> msg         <span class="co">;; mover endereço do começo do meu texto para rsi</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdx</span><span class="op">,</span> msg_len     <span class="co">;; mover o tamanho da minha mensagem para rdx</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>   <span class="cf">syscall</span>              <span class="co">;; efetuar a syscall</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="pp">macro</span> return retcode <span class="op">{</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rax</span><span class="op">,</span> <span class="dv">60</span>          <span class="co">;; mover ID da syscall para terminar o programa seguramente (masicamente o return do C)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdi</span><span class="op">,</span> <span class="dv">0</span>           <span class="co">;; mover código de retorno, para rdi</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>   <span class="cf">syscall</span>              <span class="co">;; efetuar a chamada de sistema</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="bu">entry</span> main</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">main:</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  print hello<span class="op">,</span> hello<span class="op">.</span>size</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  print goodbye<span class="op">,</span> goodbye<span class="op">.</span>size</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  return <span class="dv">0</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="bu">segment</span> readable writable</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="pp">struc</span> string <span class="op">[</span>data<span class="op">]</span> <span class="op">{</span>   <span class="co">;; estou declarando uma macro para meu tipo de dado string</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="pp">common</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    . <span class="dt">db</span> data           <span class="co">;; &quot;.&quot; simboliza o nome da variável atual por exemplo ali embaixo a variável &quot;hello&quot;</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    .size <span class="op">=</span> <span class="op">$-.</span>         <span class="co">;; &quot;.size&quot; simboiza alguma coisa tipo &quot;hello.size&quot;</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>hello string <span class="st">&quot;Hello, World!&quot;</span><span class="op">,</span> <span class="dv">10</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>goodbye string <span class="st">&quot;Goodbye, World!&quot;</span><span class="op">,</span> <span class="dv">10</span></span></code></pre></div>
+<h1 id="método-3">Método 3</h1>
+<p>Também podemos Linkar nosso código assembly com bibliotecas externas (como libc, raylib, sdl), usando o ld. Linkando com a libc nos permite usar funções da biblioteca padrão da linguagem C em nosso assembly!</p>
+<p>existe uma convenção sobre quais registradores usar quando passar argumentos para funções, do 1 ao 6 argumento da função são passados respectivamente para os regirstradores: rdi, rsi, rdx, rdx, rcx, r8, r9; o resto dos parâmetros são dados no stack.</p>
+<p>Tudo que basta é declarar os símbolos como <code>extern</code> e usar esse script para compilar o programa (assumindo que o nome do seu programa assembly se chama printf.asm)</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">fasm</span> printf.asm</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ld</span> printf.o <span class="at">-o</span> printf <span class="at">-dynamic-linker</span> /lib/ld-linux-x86-64.so.2 <span class="at">-lc</span></span></code></pre></div>
+<h3 id="le-source-code">Le source code</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">format</span> ELF64</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">section</span> <span class="st">'.text'</span> executable</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">public</span> _start</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">extrn</span> printf</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">extrn</span> _exit</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">_start:</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">mov</span> <span class="kw">rdi</span><span class="op">,</span> msg</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">mov</span> <span class="kw">rsi</span><span class="op">,</span> <span class="dv">0</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">call</span> printf</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">mov</span> <span class="kw">rdi</span><span class="op">,</span> <span class="dv">0</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">call</span> _exit</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">section</span> <span class="st">'.data'</span> writable</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  msg <span class="dt">db</span> <span class="st">&quot;Hello printf&quot;</span><span class="op">,</span> <span class="dv">10</span></span></code></pre></div>
+<h1 id="método-bônus-quine-em-fasm">Método bônus (Quine em FASM!!!)</h1>
+<p>Quine é o nome de uma técnica usada para incluir o código fonte da própria aplicação nela mesma, presumo que seja importante para aplicações relacionadas à debugging.</p>
+<p>No quine você pode incluir arquivos no próprio executável em tempo de compilação, recurso que linguagens de alto nível não tem.</p>
+<p>O código é baseado no método 1 e a única alteração foi na última linha, utilizei a diretiva <code>file</code> para poder concatenar o conteúdo do meu código fonte no binário (assumindo que o código fonte chama-se quine.asm).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">format</span> ELF64 executable</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">entry</span> start</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">start:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rax</span><span class="op">,</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdi</span><span class="op">,</span> <span class="dv">1</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rsi</span><span class="op">,</span> src</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdx</span><span class="op">,</span> srcsize</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>   <span class="cf">syscall</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rax</span><span class="op">,</span> <span class="dv">60</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>   <span class="bu">mov</span> <span class="kw">rdi</span><span class="op">,</span> <span class="dv">0</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>   <span class="cf">syscall</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="bu">segment</span> readable writable</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>src <span class="dt">file</span> <span class="st">&quot;quine.asm&quot;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>srcsize <span class="op">=</span> <span class="op">$-</span>src</span></code></pre></div>
+    </section>
+</article>
+
+        </main>
+
+        <footer>
+            <br>
+            <p class="filler">-----------------------</p>
+            <p>Esse site foi orgulhosamente gerado usando <a href="https://jaspervdj.be/hakyll/">Hakyll</a></p>
+            <p class="filler">-----------------------</p>
+        </footer>
+    </body>
+</html>
