@@ -15,7 +15,10 @@ para representar código em assembly, os mais famosos sendo a sintaxe do GNU Ass
 - Enquanto na sintaxe A&T tem estrutura básica: ``<instrução> <entrada> <saída>``
 
 Compiladores GNU também podem gerar código assembly para nós, se especificarmos a flag ``-S``, e gerar código na sintaxe intel com a flag ``-masm``. 
-Tente escrever um simples Olá Mundo em C e use esse comando de compilação (assumindo que o nome do seu programa é hello.c) ``gcc hello.c -S -masm=intel -o hello.asm``. 
+Tente escrever um simples Olá Mundo em C e use esse comando de compilação (assumindo que o nome do seu programa é hello.c) 
+```bash
+gcc hello.c -S -masm=intel -o hello.asm
+```
 
 O código gerado pode ser parecido com isso:
 
@@ -61,7 +64,7 @@ Primeiro antes de tudo, vamos recapitular 3 conceitos importantes, que todo prog
 
 ### Instruções
 
-Instruções é o qu são executadas pelo processador, todo processador que se prese implementa 2 tipos de instruções, a de manipulação de memória e aritmética.
+Instruções são os objetos executados pelo processador, todo processador que se prese implementa 2 tipos de instruções, a de manipulação de memória e aritmética.
 
 ### Memória
 
@@ -69,15 +72,15 @@ Existem 3 níveis de memória numa máquina Von Neumann:
 
 - Registradores: Memória embutida na CPU, geralmente contendo um número pequeno deles, em amd64 existem 48 registradores (registradores de uso específico como o Program Counter inclusos), todos com 64 bits de largura, valores são trazidos da memória RAM e armazenados em registradores para uso imediato.
 
-- Memória RAM: Instruções quando não estão sendo executadas e outros objetos omo variáveis são armazenadas aqui
+- Memória RAM: Instruções quando não estão sendo executadas e outros objetos como variáveis são armazenadas aqui
 
 - Memória secundária: (HDD, SSD) arquivos estáticos são armazenados aqui, interface com a memória secundária é feita pelas chamadas de sistema ou instruções de I/O.
 
 ### Syscalls
 
-Em sistemas operacionais existem 2 conceitos importantes, <u>user-mode/userland</u> e <u>kernel-mode/kernelland</u>. A parte core do sistema operacinal -- que lida com I/O de hardware, implementação de protocolos de redes, scheduling de processos, chama-se kernel. Já os diversos outros programas são rodados em user-mode, que por segurança não tem acesso as essas instruções privilegiadas e perigosas, então esses programas user-mode precisam solicitar para o kernel fazer essas tarefas para ele, e a maneira que esses programas solicita serviços é por meio das <u>syscalls</u> ou <u>chamadas de sistema</u>.
+Em sistemas operacionais existem 2 conceitos importantes, <u>user-mode/userland</u> e <u>kernel-mode/kernelland</u>. A parte core do sistema operacinal -- que lida com I/O de hardware, implementação de protocolos de redes, scheduling de processos, chama-se kernel. Já os diversos outros programas são rodados em user-mode, que por segurança não tem acesso as essas instruções privilegiadas e perigosas, então esses programas user-mode precisam solicitar para o kernel fazer essas tarefas para ele, e a maneira que esses programas solicitam serviços é por meio das <u>syscalls</u> ou <u>chamadas de sistema</u>.
 
-Cada syscall tem um ID, e a maneira em que elas são chamadas as syscalls (ou qualquer rotina em assembly) movendo os valores certos para os registradores certos e chamar a instrução ``syscall``.
+Cada syscall tem um ID, e a maneira em que elas (ou qualquer rotina em assembly) são chamadas é pela alocação de valores específicos para registradores específicos e chamando a instrução ``syscall``.
 No linux eu uso essa tabela como referência para as diversas syscalls https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/.
 Por exemplo para escrever alguma coisa no terminal deve-se executar esse algoritmo
 
@@ -95,13 +98,13 @@ Alguns exemplos de syscalls: manipulação de arquivos no disco rígido, escrita
 
 ### Peculiaridades do FASM
 
-Cada assembler tem suas próprias peculiaridades na forma de escrever o assembly, no FASM existem o que é chamado de diretivas, que são algumas funcionalidades que definem comportamento extras na hora do assembler gerar o arquivo binário. Por exemplo a diretiva ``format`` define qual o formato do arquivo gerar como saída, ``segment`` define as permissões de cada segmento de código (pensa como se fosse o chmod do linux e ``entry`` define a partir de qual <u>label</u> devo começar a executar o programa.
+Cada assembler tem suas próprias peculiaridades na forma de escrever o assembly, no FASM existem o que é chamado de diretivas, que são algumas funcionalidades que definem comportamentos extras no momento que o assembler gera o arquivo binário. Por exemplo a diretiva ``format`` define o formato do arquivo gerado, ``segment`` define as permissões de cada segmento de código (pense como se fosse o chmod do linux) e ``entry`` define a partir de qual <u>label</u> deve-se executar o programa.
 
-Obs: label é basicamente um nome para uma posição de alguma instrução no programa, nada demais.
+Obs: label é basicamente um nome para uma posição de alguma instrução no programa.
 
 ### O código em si
 
-Sem mais demora aqui está Olá Mundo em FASM:
+Sem mais demoras aqui está Olá Mundo em FASM:
 
 ```asm
 format ELF64 executable
@@ -126,9 +129,9 @@ msg_len = $-msg         ;; defino o tamanho da mensagem sendo $ (o endereço da 
 
 # Método 2
 
-Já ouviu falar de macros do C/C++? Eles também estão presentes no fasm, com isso é possível refatorar esse primeiro código
+Já ouviu falar de macros do C/C++? Eles também estão presentes no FASM, com isso é possível refatorar esse primeiro código.
 
-Caso não sabia o que é macros, eles são unidades de códigos reusávies que você define e que são literalmente copiados e colados nos lugares que 
+Caso não sabia o que são macros, eles são unidades de códigos reusávies que você define e que são literalmente copiados e colados nos lugares que 
 são chamados.
 
 ### Preste atenção de como agora ficou a rotina main:
@@ -191,9 +194,9 @@ goodbye string "Goodbye, World!", 10
 
 # Método 3
 
-Também podemos linkar nosso código assembly com bibliotecas externas (como libc, raylib, sdl), usando o ld. Linkando com a libc nos permite usar funções da biblioteca padrão da linguagem C em nosso assembly!
+Também podemos "linkar" nosso código assembly com bibliotecas externas (como libc, raylib, sdl), usando o ``ld``. Linkando com a libc nos permite usar funções da biblioteca padrão da linguagem C em nosso assembly!
 
-existe uma convenção sobre quais registradores usar quando passar argumentos para funções, do primeiro ao sétimo argumento da função são passados respectivamente para os regirstradores: rdi, rsi, rdx, rdx, rcx, r8, r9; o resto dos parâmetros são dados no stack.
+Existe uma convenção sobre quais registradores usar quando passar argumentos para funções, do primeiro ao sétimo argumento da função são passados respectivamente para os regirstradores: rdi, rsi, rdx, rdx, rcx, r8, r9; o resto dos parâmetros são dados no stack.
 
 Tudo que basta é declarar os símbolos como ``extern`` e usar esse script para compilar o programa (assumindo que o nome do seu programa chama-se printf.asm)
 
@@ -204,7 +207,7 @@ fasm printf.asm
 ld printf.o -o printf -dynamic-linker /lib/ld-linux-x86-64.so.2 -lc
 ```
 
-### Le source code
+### O código fonte
 
 ```asm
 format ELF64
