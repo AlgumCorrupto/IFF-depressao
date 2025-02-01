@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+        <title>IFF da depressão - Lógica Condicional</title>
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="icon" type="image/x-con" href="../images/favicon.ico">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="title">
+                <p class="filler">:::::::::::::::::</p>
+                              <h1>IFF da depressão</h1>
+                <p class="filler">:::::::::::::::::</p>
+            </div>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../contact.html">Portifólio</a>
+                <a href="../rss.xml">RSS</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <article>
+    <section class="title">Lógica Condicional</section>
+    <p class="filler">=========================================</p>
+    <section class="header">
+        Postado em February  1, 2025
+        
+            por Paulo Artur
+        
+    </section>
+    <section class="body">
+        <p>Na disciplina lógica computacional, um dos primeiros assuntos estudados são os operadores lógicos, tal como: <span class="math inline">\(\land\)</span>, <span class="math inline">\(\lor\)</span>, <span class="math inline">\(\rightarrow\)</span>, <span class="math inline">\(\leftrightarrow\)</span>, <span class="math inline">\(\oplus\)</span>.</p>
+<p>Todos eles fazem total sentido para mim menos o operador condicional (<span class="math inline">\(\rightarrow\)</span>). Vamos supor 2 variáveis <span class="math inline">\(p\)</span> e <span class="math inline">\(q\)</span>. e a proposição <span class="math inline">\(p \rightarrow q\)</span>.</p>
+<p>A única maneira dessa expressão ser avaliado como falsa é quando <span class="math inline">\(V(p) = 1\)</span> e <span class="math inline">\(V(q) = 0\)</span>. O que não fazia sentido para mim era o por quê apenas nesse contexto essa proposição era avaliado dessa maneira.</p>
+<p>Se fomos considerar a expressão de cima como esse snippet de código, tudo faria sentido.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> p <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(q)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">True</span>)</span></code></pre></div>
+<p>Nesse snippet tenho um statement condicional <code>if-else</code>. Traduzindo essa expressão para portugês temos</p>
+<blockquote>
+<p>se <span class="math inline">\(p\)</span> for verdadeiro, então a saída vai ser o valor de <span class="math inline">\(q\)</span>, se não a saída vai ser o valor verdadeiro.</p>
+</blockquote>
+<h2 id="agora-vamos-para-os-exemplos">Agora vamos para os exemplos:</h2>
+<ul>
+<li><p><code>p = True</code></p></li>
+<li><p><code>q = False</code></p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">True</span> <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">False</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">True</span>)</span></code></pre></div>
+<p>Como True é igual a True a saída vai ser</p>
+<pre><code>False</code></pre>
+<h3 id="outro-exemplo">Outro exemplo</h3>
+<ul>
+<li><p><code>p = False</code></p></li>
+<li><p><code>q = False</code></p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">False</span> <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">False</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">True</span>)</span></code></pre></div>
+<p>Como <code>False</code> é diferente de <code>True</code>, a expressão vai cair no bloco <code>else</code>, então a saída do programa vai ser:</p>
+<pre><code>True</code></pre>
+<h3 id="outro-exemplo-1">Outro exemplo</h3>
+<ul>
+<li><p><code>p = True</code></p></li>
+<li><p><code>q = True</code></p></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">True</span> <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">True</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">True</span>)</span></code></pre></div>
+<p>O bloco <code>if</code> vai ser avaliado, saída:</p>
+<pre><code>True</code></pre>
+<h3 id="último-exemplo">Último exemplo</h3>
+<ul>
+<li><p><code>p = False</code></p></li>
+<li><p><code>q = True</code></p></li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">False</span> <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">True</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="va">True</span>)</span></code></pre></div>
+<p>O bloco <code>else</code> vai ser avaliado, saída.</p>
+<pre><code>True</code></pre>
+    </section>
+</article>
+
+        </main>
+
+        <footer>
+            <br>
+            <p class="filler">-----------------------</p>
+            <p>Esse site foi orgulhosamente gerado usando <a href="https://jaspervdj.be/hakyll/">Hakyll</a></p>
+            <p class="filler">-----------------------</p>
+        </footer>
+    </body>
+</html>
