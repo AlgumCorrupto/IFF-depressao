@@ -7,9 +7,9 @@ Na disciplina lógica computacional, um dos primeiros assuntos estudados são os
 
 Todos eles fazem total sentido para mim menos o operador condicional ($\rightarrow$). Vamos supor 2 variáveis $p$ e $q$. e a proposição: $$p \rightarrow q$$
 
-A única maneira dessa proposição ser avaliado como falsa é quando $V(p) = 1$ e $V(q) = 0$. O que não fazia sentido para mim era o por quê apenas nesse contexto essa proposição era avaliado dessa maneira.
+A única maneira dessa proposição ser avaliado como falsa é quando $V(p) = 1$ e $V(q) = 0$. O que não fazia sentido para mim era o por quê apenas nesse contexto essa proposição era avaliada dessa maneira.
 
-Se fomos considerar a proposição acima como esse snippet de código, tudo faria sentido.
+Se fomos considerar a proposição acima como esse snippet de código, tudo faria mais sentido.
 
 ```python
 if p == True:

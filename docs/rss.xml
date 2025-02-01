@@ -23,8 +23,8 @@
     <section class="body">
         <p>Na disciplina lógica computacional, um dos primeiros assuntos estudados são os operadores lógicos, tal como: <span class="math inline">\(\land\)</span>, <span class="math inline">\(\lor\)</span>, <span class="math inline">\(\rightarrow\)</span>, <span class="math inline">\(\leftrightarrow\)</span>, <span class="math inline">\(\oplus\)</span>.</p>
 <p>Todos eles fazem total sentido para mim menos o operador condicional (<span class="math inline">\(\rightarrow\)</span>). Vamos supor 2 variáveis <span class="math inline">\(p\)</span> e <span class="math inline">\(q\)</span>. e a proposição: <span class="math display">\[p \rightarrow q\]</span></p>
-<p>A única maneira dessa proposição ser avaliado como falsa é quando <span class="math inline">\(V(p) = 1\)</span> e <span class="math inline">\(V(q) = 0\)</span>. O que não fazia sentido para mim era o por quê apenas nesse contexto essa proposição era avaliado dessa maneira.</p>
-<p>Se fomos considerar a proposição acima como esse snippet de código, tudo faria sentido.</p>
+<p>A única maneira dessa proposição ser avaliado como falsa é quando <span class="math inline">\(V(p) = 1\)</span> e <span class="math inline">\(V(q) = 0\)</span>. O que não fazia sentido para mim era o por quê apenas nesse contexto essa proposição era avaliada dessa maneira.</p>
+<p>Se fomos considerar a proposição acima como esse snippet de código, tudo faria mais sentido.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> p <span class="op">==</span> <span class="va">True</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(q)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
