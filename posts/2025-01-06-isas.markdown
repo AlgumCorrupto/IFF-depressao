@@ -38,7 +38,7 @@ nimble, apenas bits mas ainda sim é possível fazer qualquer computação moder
 A maneira que essa linguagem funciona é extremamente simples. Existe um número "infinito" células, cada célula possui largura de 1 bit.
 A instrução aceita 2 argumentos, que são eles:
 
-- Flip (primeiro argumento) - O offset (relativo ao ponteiro da celula atual) da célula para ter seu valor invertido.
+- Flip (primeiro argumento) - O offset (relativo ao ponteiro da célula atual) da célula para ter seu valor invertido.
 
 - Jump (segundo argumento) - O novo valor do ponteiro.
 
@@ -66,6 +66,10 @@ Ela contém 8 operadores, sendo eles:
 - $[$ Vai para o $]$ correspondente se o valor da célula atual for 0.
 
 - $]$ Vai para o $[$ correspondente se o valor da célula atual diferente 0.
+
+- $.$ Imprime o valor da célula atual.
+
+- $,$ Entrada do novo valor para a célula atual.
 
 Essa linguagem contém apenas 8 operadores de propósito geral então podemos classifica-la como RISC.
 

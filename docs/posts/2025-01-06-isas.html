@@ -58,7 +58,7 @@ nimble, apenas bits mas ainda sim é possível fazer qualquer computação moder
 A maneira que essa linguagem funciona é extremamente simples. Existe um número “infinito” células, cada célula possui largura de 1 bit.
 A instrução aceita 2 argumentos, que são eles:</p>
 <ul>
-<li><p>Flip (primeiro argumento) - O offset (relativo ao ponteiro da celula atual) da célula para ter seu valor invertido.</p></li>
+<li><p>Flip (primeiro argumento) - O offset (relativo ao ponteiro da célula atual) da célula para ter seu valor invertido.</p></li>
 <li><p>Jump (segundo argumento) - O novo valor do ponteiro.</p></li>
 </ul>
 <p>O programa consiste em uma lista dessas instruções que são executados sequênciamente.</p>
@@ -74,6 +74,8 @@ A instrução aceita 2 argumentos, que são eles:</p>
 <li><p><span class="math inline">\(&lt;\)</span> Decrementa o ponteiro da célula atual.</p></li>
 <li><p><span class="math inline">\([\)</span> Vai para o <span class="math inline">\(]\)</span> correspondente se o valor da célula atual for 0.</p></li>
 <li><p><span class="math inline">\(]\)</span> Vai para o <span class="math inline">\([\)</span> correspondente se o valor da célula atual diferente 0.</p></li>
+<li><p><span class="math inline">\(.\)</span> Imprime o valor da célula atual.</p></li>
+<li><p><span class="math inline">\(,\)</span> Entrada do novo valor para a célula atual.</p></li>
 </ul>
 <p>Essa linguagem contém apenas 8 operadores de propósito geral então podemos classifica-la como RISC.</p>
 <h2 id="cisc">CISC</h2>
