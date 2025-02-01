@@ -35,7 +35,7 @@ else:
     print(True)
 ```
 
-Como True é igual a True a saída vai ser 
+Como True é igual a True a, o bloco ``if`` vai ser avaliado, então a saída saída será:
 
 ```
 False
