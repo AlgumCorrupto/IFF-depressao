@@ -339,7 +339,7 @@ o que falta na otimização de instruções de uso geral ele retribui como instr
 <figcaption aria-hidden="true">Até o nintendinho usa como base o modelo Von Neumann!</figcaption>
 </figure>
 <h1 id="modelo-de-turing-assembly">Modelo de Turing &amp; Assembly</h1>
-<p>Alan Turing tese criou uma máquina abstrata em que seu comportamento define o que é e não é computável. O que essa máquina consegue calcular tendo memória infinita é considerado <u>computável</u>, caso contrário é <u>não computável</u>.</p>
+<p>Alan Turing em sua tese criou uma máquina abstrata em que seu comportamento define o que é e não é computável. O que essa máquina consegue calcular tendo memória infinita é considerado <u>computável</u>, caso contrário é <u>não computável</u>.</p>
 <p>Essa máquina de turing opera em uma fita infinita, tal que é dividida em várias células. Cada célula contém uma símbolo de um conjunto finito de símbolos chamado “alfabeto da máquina”. A máquina de turing tem uma agulha que fica em cima dessa essa fita. Cada passo de execução essa máquina ler o símbolo da célula que essa agulha está sobreposta, Então baseado em seu estado atual e célula lida, a máquina então pode:</p>
 <ul>
 <li><p>Escrever um símbolo na célula atual e mover essa agulha para esquerda ou direita.</p></li>

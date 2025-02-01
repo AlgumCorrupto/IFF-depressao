@@ -39,7 +39,7 @@ Hoje em dia a maioria senão todos os <i>hardwares</i> de computação modernos 
 
 # Modelo de Turing & Assembly
 
-Alan Turing tese criou uma máquina abstrata em que seu comportamento define o que é e não é computável. O que essa máquina consegue calcular tendo memória infinita é considerado <u>computável</u>, caso contrário é <u>não computável</u>.
+Alan Turing em sua tese criou uma máquina abstrata em que seu comportamento define o que é e não é computável. O que essa máquina consegue calcular tendo memória infinita é considerado <u>computável</u>, caso contrário é <u>não computável</u>.
 
 Essa máquina de turing opera em uma fita infinita, tal que é dividida em várias células. Cada célula contém uma símbolo de um conjunto finito de símbolos chamado "alfabeto da máquina". A máquina de turing tem uma agulha que fica em cima dessa essa fita. Cada passo de execução essa máquina ler o símbolo da célula que essa agulha está sobreposta, Então baseado em seu estado atual e célula lida, a máquina então pode: 
 
